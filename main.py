@@ -17,11 +17,12 @@ from analyzer import compare_data, get_top_performers, calculate_portfolio_alloc
 from telegram_notifier import create_telegram_message, send_to_telegram
 from email_notifier import create_email_message, send_email
 from discord_notifier import create_discord_message, send_to_discord
-from technical_analyzer import analyze_top10_technical
+from technical_analyzer import analyze_top10_technical, load_technical_snapshot
 from backtester import run_backtest
 from config import (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ENABLE_TELEGRAM_NOTIFICATIONS, 
                     ENABLE_EMAIL_NOTIFICATIONS, ENABLE_DISCORD_NOTIFICATIONS, ENABLE_BACKTESTING,
-                    FINVIZ_URL_LARGE, FINVIZ_URL_MEGA, SCREENER_TYPES, ENABLE_MARKET_FILTER)
+                    FINVIZ_URL_LARGE, FINVIZ_URL_MEGA, SCREENER_TYPES, ENABLE_MARKET_FILTER,
+                    DATA_DIR)
 from logger import get_logger
 
 # 로거 초기화
@@ -61,7 +62,9 @@ def process_screener(screener_type, today):
         # 3) 이전 데이터 로드 및 비교
         logger.info("3. 이전 데이터 분석 중...")
         # 영업일 기준으로 전날 데이터 로드 (주말/월요일은 금요일 데이터)
-        yesterday_df = load_last_business_day_data(filename_prefix=f"{screener_type}_")
+        yesterday_df, yesterday_date = load_last_business_day_data(
+            filename_prefix=f"{screener_type}_", return_date=True
+        )
         week_ago_df = load_previous_data(7, filename_prefix=f"{screener_type}_")  # 7일 전
         
         # 4) 비교 분석
@@ -93,35 +96,73 @@ def process_screener(screener_type, today):
         # 8) 기술적 분석 (이동평균선)
         logger.info("4. 기술적 분석 중...")
         technical_analysis = None
+        technical_snapshot = None
         previous_technical_analysis = None
+        previous_snapshot = None
         ma60_breaks = []
         trailing_stops = []
         breakout_highs = []
-        
+
         try:
-            technical_analysis = analyze_top10_technical(df)
+            technical_dir = os.path.join(DATA_DIR, 'technical')
+            technical_result = analyze_top10_technical(
+                df,
+                as_of_date=today,
+                screener_type=screener_type,
+                output_dir=technical_dir,
+                return_snapshot=True,
+            )
+            if isinstance(technical_result, tuple):
+                technical_analysis, technical_snapshot = technical_result
+            else:
+                technical_analysis = technical_result
             logger.info("기술적 분석 완료")
-            
+
             # 전날 데이터가 있으면 전날 기술적 분석도 수행하여 MA60 이탈 감지
-            if yesterday_df is not None:
+            if yesterday_date:
                 from technical_analyzer import detect_ma60_breaks
-                previous_technical_analysis = analyze_top10_technical(yesterday_df)
-                ma60_breaks = detect_ma60_breaks(technical_analysis, previous_technical_analysis)
-                
-                if ma60_breaks:
-                    logger.warning(f"⚠️ MA60 이탈 종목 {len(ma60_breaks)}개 감지!")
+
+                previous_snapshot = load_technical_snapshot(
+                    screener_type,
+                    yesterday_date,
+                    base_dir=technical_dir,
+                )
+
+                if previous_snapshot:
+                    previous_technical_analysis = previous_snapshot
+                elif yesterday_df is not None:
+                    logger.warning(
+                        f"전날({yesterday_date}) 기술 분석 스냅샷을 찾을 수 없습니다. 즉시 재계산합니다."
+                    )
+                    previous_technical_analysis = analyze_top10_technical(yesterday_df)
                 else:
-                    logger.info("MA60 이탈 종목 없음")
-            
+                    logger.warning(
+                        f"전날({yesterday_date}) 기술 분석 스냅샷을 찾을 수 없고 원본 데이터도 없습니다."
+                    )
+
+                if previous_technical_analysis:
+                    ma60_breaks = detect_ma60_breaks(
+                        technical_snapshot or technical_analysis,
+                        previous_technical_analysis,
+                    )
+
+                    if ma60_breaks:
+                        logger.warning(f"⚠️ MA60 이탈 종목 {len(ma60_breaks)}개 감지!")
+                    else:
+                        logger.info("MA60 이탈 종목 없음")
+
             # 신고가 돌파 감지 (3개월 최고가 경신)
             from technical_analyzer import detect_trailing_stops, detect_breakout_highs
             breakout_highs = detect_breakout_highs(df)
             
             # 트레일링 스탑 감지 (MA20 2일 이상 하향 이탈)
-            if yesterday_df is not None and previous_technical_analysis is not None:
-                trailing_stops = detect_trailing_stops(technical_analysis, previous_technical_analysis)
+            if previous_technical_analysis is not None:
+                trailing_stops = detect_trailing_stops(
+                    technical_snapshot or technical_analysis,
+                    previous_technical_analysis,
+                )
             else:
-                logger.warning("전날 데이터 없음: 트레일링 스탑 분석 스킵")
+                logger.warning("전날 기술 분석 데이터 없음: 트레일링 스탑 분석 스킵")
             
         except Exception as e:
             logger.error(f"기술적 분석 실패: {e}", exc_info=True)
