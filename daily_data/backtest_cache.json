@@ -1,0 +1,106 @@
+{
+  "4weeks_10000": {
+    "cache_date": "2025-11-01",
+    "result": {
+      "start_date": "2025-10-27",
+      "end_date": "2025-11-01",
+      "initial_capital": 10000,
+      "final_value": 10307.586493999795,
+      "total_return": 3.0758649399979547,
+      "annualized_return": 812.9775702936417,
+      "mdd": -1.7703392664823743,
+      "sharpe_ratio": 3.7708506314957653,
+      "win_rate": 40.0,
+      "num_rebalances": 5,
+      "best_day": {
+        "date": "2025-10-28",
+        "return": 4.537734521766132,
+        "value": 10309.642537887386
+      },
+      "worst_day": {
+        "date": "2025-10-29",
+        "return": -1.7703392664823732,
+        "value": 10127.126887805196
+      }
+    }
+  },
+  "4weeks_10000.0": {
+    "cache_date": "2025-11-01",
+    "result": {
+      "start_date": "2025-10-27",
+      "end_date": "2025-11-01",
+      "initial_capital": 10000.0,
+      "final_value": 10307.586493999795,
+      "total_return": 3.0758649399979547,
+      "annualized_return": 812.9775702936417,
+      "mdd": -1.7703392664823743,
+      "sharpe_ratio": 3.7708506314957653,
+      "win_rate": 40.0,
+      "num_rebalances": 5,
+      "best_day": {
+        "date": "2025-10-28",
+        "return": 4.537734521766132,
+        "value": 10309.642537887386
+      },
+      "worst_day": {
+        "date": "2025-10-29",
+        "return": -1.7703392664823732,
+        "value": 10127.126887805196
+      }
+    }
+  },
+  "large_30weeks_10000.0": {
+    "cache_date": "2025-11-05",
+    "result": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-05",
+      "initial_capital": 10000.0,
+      "final_value": 8753.33565802962,
+      "total_return": -12.466643419703797,
+      "annualized_return": -99.99947114161853,
+      "mdd": -12.466643419703797,
+      "sharpe_ratio": -13.83038778912548,
+      "win_rate": 0.0,
+      "num_rebalances": 4,
+      "best_day": {
+        "date": "2025-11-01",
+        "return": 0,
+        "value": 10000.0
+      },
+      "worst_day": {
+        "date": "2025-11-02",
+        "return": -6.440737187440282,
+        "value": 9355.926281255972
+      },
+      "cash_holding_days": 0,
+      "cash_holding_ratio": 0.0
+    }
+  },
+  "mega_30weeks_10000.0": {
+    "cache_date": "2025-11-05",
+    "result": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-05",
+      "initial_capital": 10000.0,
+      "final_value": 9268.772397882436,
+      "total_return": -7.31227602117564,
+      "annualized_return": -99.90210119784089,
+      "mdd": -7.31227602117564,
+      "sharpe_ratio": -13.89063158412934,
+      "win_rate": 0.0,
+      "num_rebalances": 4,
+      "best_day": {
+        "date": "2025-11-01",
+        "return": 0,
+        "value": 10000.0
+      },
+      "worst_day": {
+        "date": "2025-11-02",
+        "return": -3.725536107011032,
+        "value": 9627.446389298897
+      },
+      "cash_holding_days": 0,
+      "cash_holding_ratio": 0.0
+    }
+  }
+}

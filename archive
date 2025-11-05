@@ -1,0 +1,273 @@
+# pip install requests pandas numpy beautifulsoup4 slack-sdk schedule
+import requests
+import pandas as pd
+import numpy as np
+from bs4 import BeautifulSoup
+import re
+import os
+from datetime import datetime, timedelta
+import json
+from slack_sdk import WebClient
+from slack_sdk.errors import SlackApiError
+from config import SLACK_WEBHOOK_URL, DATA_DIR, FINVIZ_URL
+
+# 1) Finviz 웹 스크래핑으로 직접 데이터 수집
+def scrape_finviz_screener():
+    url = FINVIZ_URL
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    
+    print("Finviz 웹 페이지에서 데이터를 가져오는 중...")
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    # 테이블 찾기 (여러 가능한 클래스명 시도)
+    table = None
+    possible_classes = ['table-light', 'screener_table', 'table', 'screener']
+    
+    for class_name in possible_classes:
+        table = soup.find('table', {'class': class_name})
+        if table:
+            print(f"테이블을 찾았습니다: {class_name}")
+            break
+    
+    if not table:
+        # 클래스명 없이 테이블 찾기
+        tables = soup.find_all('table')
+        print(f"총 {len(tables)}개의 테이블을 찾았습니다.")
+        
+        # 가장 큰 테이블 선택 (데이터가 많은 테이블)
+        if tables:
+            table = max(tables, key=lambda t: len(t.find_all('tr')))
+            print("가장 큰 테이블을 선택했습니다.")
+        else:
+            print("테이블을 찾을 수 없습니다.")
+            return None
+    
+    # 헤더 추출
+    headers = []
+    rows = table.find_all('tr')
+    print(f"총 {len(rows)}개의 행을 찾았습니다.")
+    
+    # 첫 번째 행이 헤더인지 확인
+    if len(rows) > 0:
+        first_row = rows[0]
+        cells = first_row.find_all(['td', 'th'])
+        print(f"첫 번째 행의 셀 수: {len(cells)}")
+        
+        for cell in cells:
+            text = cell.get_text().strip()
+            headers.append(text)
+            print(f"헤더 셀: '{text}'")
+    
+    print(f"컬럼 헤더: {headers}")
+    
+    # 헤더가 비어있으면 기본 헤더 사용
+    if not headers or all(h == '' for h in headers):
+        print("헤더가 비어있어서 기본 헤더를 사용합니다.")
+        headers = ['Ticker', 'Company', 'Sector', 'Industry', 'Country', 'Market Cap', 'P/E', 'Price', 'Change', 'Volume', 'Performance (Quarter)', 'Performance (Month)', 'Performance (Week)', 'Performance (Half Year)', 'Performance (Year)', 'Performance (3 Years)', 'Performance (5 Years)', 'Performance (10 Years)']
+    
+    # 데이터 추출
+    data = []
+    data_rows = rows[1:] if len(rows) > 1 else rows  # 헤더가 있으면 제외, 없으면 모든 행 사용
+    
+    for row in data_rows:
+        cells = row.find_all('td')
+        if len(cells) > 0:
+            row_data = []
+            for cell in cells:
+                text = cell.get_text().strip()
+                # 링크가 있는 경우 (티커) 링크 텍스트 사용
+                link = cell.find('a')
+                if link:
+                    text = link.get_text().strip()
+                row_data.append(text)
+            data.append(row_data)
+    
+    # DataFrame 생성
+    df = pd.DataFrame(data, columns=headers)
+    print(f"총 {len(df)}개 종목을 가져왔습니다.")
+    
+    return df
+
+# 2) 데이터 저장 함수
+def save_daily_data(df, date_str):
+    """일일 데이터를 CSV 파일로 저장"""
+    if not os.path.exists(DATA_DIR):
+        os.makedirs(DATA_DIR)
+    
+    filename = f"{DATA_DIR}/finviz_data_{date_str}.csv"
+    df.to_csv(filename, index=False)
+    print(f"데이터를 {filename}에 저장했습니다.")
+    return filename
+
+# 3) 이전 데이터 로드 함수
+def load_previous_data(days_ago):
+    """지정된 일수 전의 데이터를 로드"""
+    target_date = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+    filename = f"{DATA_DIR}/finviz_data_{target_date}.csv"
+    
+    if os.path.exists(filename):
+        return pd.read_csv(filename)
+    else:
+        print(f"{days_ago}일 전 데이터를 찾을 수 없습니다: {filename}")
+        return None
+
+# 4) 데이터 비교 분석 함수
+def compare_data(current_df, previous_df, period_name):
+    """현재 데이터와 이전 데이터를 비교"""
+    if previous_df is None:
+        return f"{period_name}: 비교할 데이터가 없습니다."
+    
+    current_top10 = current_df.head(10)
+    previous_top10 = previous_df.head(10)
+    
+    # 새로운 종목들 (이전에 없었던 종목)
+    current_tickers = set(current_top10['Ticker'])
+    previous_tickers = set(previous_top10['Ticker'])
+    new_tickers = current_tickers - previous_tickers
+    dropped_tickers = previous_tickers - current_tickers
+    
+    # 순위 변화 분석
+    rank_changes = []
+    for ticker in current_tickers & previous_tickers:
+        current_rank = current_top10[current_top10['Ticker'] == ticker].index[0] + 1
+        previous_rank = previous_top10[previous_top10['Ticker'] == ticker].index[0] + 1
+        change = previous_rank - current_rank  # 양수면 상승, 음수면 하락
+        rank_changes.append({
+            'ticker': ticker,
+            'current_rank': current_rank,
+            'previous_rank': previous_rank,
+            'change': change
+        })
+    
+    # 상위 3개 종목의 수익률 변화
+    top3_changes = []
+    for i in range(min(3, len(current_top10), len(previous_top10))):
+        current_ticker = current_top10.iloc[i]['Ticker']
+        current_perf = current_top10.iloc[i]['Perf Quart']
+        
+        if current_ticker in previous_tickers:
+            prev_row = previous_top10[previous_top10['Ticker'] == current_ticker]
+            if not prev_row.empty:
+                previous_perf = prev_row.iloc[0]['Perf Quart']
+                perf_change = float(current_perf.replace('%', '')) - float(previous_perf.replace('%', ''))
+                top3_changes.append({
+                    'ticker': current_ticker,
+                    'current_perf': current_perf,
+                    'previous_perf': previous_perf,
+                    'perf_change': perf_change
+                })
+    
+    return {
+        'period': period_name,
+        'new_tickers': list(new_tickers),
+        'dropped_tickers': list(dropped_tickers),
+        'rank_changes': rank_changes,
+        'top3_changes': top3_changes
+    }
+
+# 5) Slack 메시지 생성 함수
+def create_slack_message(current_df, yesterday_analysis, week_analysis):
+    """Slack 메시지 생성"""
+    current_top10 = current_df.head(10)
+    
+    message = f"📈 *Finviz 대형주 3개월 수익률 상위 10개 - {datetime.now().strftime('%Y-%m-%d')}*\n\n"
+    
+    # 현재 상위 10개
+    message += "*🏆 현재 상위 10개 종목:*\n"
+    for i, row in current_top10.iterrows():
+        message += f"{i+1}. {row['Ticker']} - {row['Perf Quart']} (${row['Price']})\n"
+    
+    # 전날 비교
+    if yesterday_analysis:
+        message += f"\n*📊 전날 대비 변화:*\n"
+        if yesterday_analysis['new_tickers']:
+            message += f"• 새로 진입: {', '.join(yesterday_analysis['new_tickers'])}\n"
+        if yesterday_analysis['dropped_tickers']:
+            message += f"• 탈락: {', '.join(yesterday_analysis['dropped_tickers'])}\n"
+        
+        if yesterday_analysis['top3_changes']:
+            message += f"• 상위 3개 수익률 변화:\n"
+            for change in yesterday_analysis['top3_changes']:
+                change_str = f"+{change['perf_change']:.1f}%" if change['perf_change'] > 0 else f"{change['perf_change']:.1f}%"
+                message += f"  - {change['ticker']}: {change['previous_perf']} → {change['current_perf']} ({change_str})\n"
+    
+    # 일주일 전 비교
+    if week_analysis:
+        message += f"\n*📅 일주일 전 대비 변화:*\n"
+        if week_analysis['new_tickers']:
+            message += f"• 새로 진입: {', '.join(week_analysis['new_tickers'])}\n"
+        if week_analysis['dropped_tickers']:
+            message += f"• 탈락: {', '.join(week_analysis['dropped_tickers'])}\n"
+    
+    return message
+
+# 6) Slack 전송 함수
+def send_to_slack(message, webhook_url):
+    """Slack으로 메시지 전송"""
+    try:
+        response = requests.post(webhook_url, json={'text': message})
+        if response.status_code == 200:
+            print("Slack 메시지 전송 성공!")
+        else:
+            print(f"Slack 전송 실패: {response.status_code}")
+    except Exception as e:
+        print(f"Slack 전송 중 오류: {e}")
+
+# 7) 메인 실행 함수
+def main():
+    
+    # 현재 날짜
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    print(f"=== Finviz 대형주 3개월 수익률 분석 - {today} ===")
+    
+    # 1) 데이터 수집
+    df = scrape_finviz_screener()
+    if df is None:
+        print("데이터 수집에 실패했습니다.")
+        return
+    
+    print("데이터를 성공적으로 가져왔습니다.")
+    
+    # 2) 현재 데이터 저장
+    save_daily_data(df, today)
+    
+    # 3) 이전 데이터 로드 및 비교
+    yesterday_df = load_previous_data(1)  # 1일 전
+    week_ago_df = load_previous_data(7)  # 7일 전
+    
+    # 4) 비교 분석
+    yesterday_analysis = None
+    week_analysis = None
+    
+    if yesterday_df is not None:
+        yesterday_analysis = compare_data(df, yesterday_df, "전날")
+        print("전날 대비 분석 완료")
+    
+    if week_ago_df is not None:
+        week_analysis = compare_data(df, week_ago_df, "일주일 전")
+        print("일주일 전 대비 분석 완료")
+    
+    # 5) 현재 상위 10개 출력
+    print(f"\n=== 3개월 수익률 상위 10개 종목 ===")
+    top10 = df.head(10)[['Ticker', 'Perf Quart', 'Price', 'Change']]
+    print(top10)
+    
+    # 6) Slack 메시지 생성 및 전송
+    if SLACK_WEBHOOK_URL != "YOUR_SLACK_WEBHOOK_URL_HERE":
+        slack_message = create_slack_message(df, yesterday_analysis, week_analysis)
+        send_to_slack(slack_message, SLACK_WEBHOOK_URL)
+    else:
+        print("\nSlack 웹훅 URL을 설정해주세요.")
+        print("생성된 메시지 미리보기:")
+        print(create_slack_message(df, yesterday_analysis, week_analysis))
+
+# 8) 실행
+if __name__ == "__main__":
+    main()
