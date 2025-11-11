@@ -1,0 +1,5148 @@
+{
+  "start_date": "2010-01-01",
+  "end_date": "2025-11-05",
+  "initial_capital": 10000,
+  "final_value": 2497.4511072616597,
+  "total_return": -75.02548892738339,
+  "cagr": -8.383718881048308,
+  "years": 15.84,
+  "mdd": -76.46243312609418,
+  "sharpe_ratio": -0.6162892299999446,
+  "win_rate": 45.5026455026455,
+  "avg_monthly_return": -0.5295419123523549,
+  "volatility": 5.252577532436271,
+  "best_month": {
+    "date": "2020-04-24",
+    "return": 15.616576669389204,
+    "value": 3550.816805832074
+  },
+  "worst_month": {
+    "date": "2022-09-30",
+    "return": -12.433665943986885,
+    "value": 3710.1789452118237
+  },
+  "total_rebalances": 827,
+  "total_trades": 15782,
+  "total_transaction_costs": 23293.175247928593,
+  "transaction_cost_pct": 232.93175247928593,
+  "portfolio_history": [
+    {
+      "date": "2010-01-29",
+      "value": 8842.703779890262,
+      "cash": 1.8189894035458565e-12,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMD",
+        "AMZN",
+        "UNH",
+        "MA",
+        "MRK",
+        "V",
+        "BA",
+        "BRK-B",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2010-02-26",
+      "value": 8713.692934911915,
+      "cash": 873.7228525099272,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "BA",
+        "NVDA",
+        "UNH",
+        "HD",
+        "BRK-B",
+        "NFLX",
+        "LOW",
+        "MRK"
+      ]
+    },
+    {
+      "date": "2010-03-26",
+      "value": 8917.727966516475,
+      "cash": 894.1814653113075,
+      "positions": 9,
+      "tickers": [
+        "BA",
+        "NVDA",
+        "AMD",
+        "NFLX",
+        "CMCSA",
+        "HD",
+        "BRK-B",
+        "CRM",
+        "CVS"
+      ]
+    },
+    {
+      "date": "2010-04-30",
+      "value": 9087.68595757522,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "BA",
+        "C",
+        "GE",
+        "AAPL",
+        "WFC",
+        "HD",
+        "HON",
+        "UPS",
+        "CAT"
+      ]
+    },
+    {
+      "date": "2010-05-28",
+      "value": 8447.838956874413,
+      "cash": 847.0656478348136,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "TMUS",
+        "CRM",
+        "AAPL",
+        "HD",
+        "C",
+        "CAT",
+        "SBUX",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2010-06-25",
+      "value": 8298.262758989636,
+      "cash": 832.0676276773821,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "CRM",
+        "AAPL",
+        "TMUS",
+        "EOG",
+        "SBUX",
+        "C",
+        "CAT",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2010-07-30",
+      "value": 8105.2700914110865,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "CRM",
+        "TMUS",
+        "CAT",
+        "AAPL",
+        "COP",
+        "AXP",
+        "CMCSA",
+        "MCD",
+        "T"
+      ]
+    },
+    {
+      "date": "2010-08-27",
+      "value": 8149.170345034061,
+      "cash": 817.1181165823866,
+      "positions": 9,
+      "tickers": [
+        "CRM",
+        "NFLX",
+        "TMUS",
+        "VZ",
+        "T",
+        "MCD",
+        "UNH",
+        "BRK-B",
+        "MRK"
+      ]
+    },
+    {
+      "date": "2010-09-24",
+      "value": 8805.112673202102,
+      "cash": 882.8895187111883,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "CRM",
+        "CAT",
+        "VZ",
+        "AMZN",
+        "UNH",
+        "ORCL",
+        "T",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2010-10-29",
+      "value": 8567.718884854292,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "GOOGL",
+        "GOOG",
+        "ORCL",
+        "CRM",
+        "CAT",
+        "UNH",
+        "VZ",
+        "SLB"
+      ]
+    },
+    {
+      "date": "2010-11-26",
+      "value": 9070.017868880845,
+      "cash": 909.4515888853389,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "TSLA",
+        "AMZN",
+        "CRM",
+        "NVDA",
+        "TMUS",
+        "SLB",
+        "SBUX",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2010-12-31",
+      "value": 8825.729034105312,
+      "cash": 1.5916157281026244e-12,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "SLB",
+        "ORCL",
+        "AMD",
+        "CAT",
+        "TMUS",
+        "AMZN",
+        "SBUX",
+        "BLK",
+        "GOOG"
+      ]
+    },
+    {
+      "date": "2011-01-28",
+      "value": 8888.129619346084,
+      "cash": 2.6147972675971687e-12,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "SLB",
+        "NFLX",
+        "XOM",
+        "SCHW",
+        "CMCSA",
+        "WFC",
+        "HON",
+        "TMUS",
+        "GE"
+      ]
+    },
+    {
+      "date": "2011-02-25",
+      "value": 8970.143704257247,
+      "cash": 1.3642420526593924e-12,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "TMUS",
+        "SLB",
+        "CAT",
+        "GE",
+        "COP",
+        "XOM",
+        "WFC",
+        "JPM",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2011-03-25",
+      "value": 8505.727601314247,
+      "cash": 852.8701479389267,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "COP",
+        "EOG",
+        "CVX",
+        "CAT",
+        "TMUS",
+        "GE",
+        "PFE",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2011-04-29",
+      "value": 8364.813018298788,
+      "cash": 838.7406287612165,
+      "positions": 9,
+      "tickers": [
+        "UNH",
+        "NVDA",
+        "TMUS",
+        "NFLX",
+        "CAT",
+        "EOG",
+        "MA",
+        "BA",
+        "PFE"
+      ]
+    },
+    {
+      "date": "2011-05-27",
+      "value": 8184.083789336256,
+      "cash": 1.2505552149377763e-12,
+      "positions": 10,
+      "tickers": [
+        "TMUS",
+        "NFLX",
+        "MA",
+        "TSLA",
+        "CRM",
+        "PFE",
+        "AXP",
+        "UNH",
+        "V",
+        "T"
+      ]
+    },
+    {
+      "date": "2011-06-24",
+      "value": 7631.390568968255,
+      "cash": 1.9326762412674725e-12,
+      "positions": 10,
+      "tickers": [
+        "TMUS",
+        "TSLA",
+        "NFLX",
+        "UNH",
+        "SBUX",
+        "TMO",
+        "CVS",
+        "MA",
+        "AXP",
+        "T"
+      ]
+    },
+    {
+      "date": "2011-07-29",
+      "value": 7693.369133126254,
+      "cash": 2.0463630789890885e-12,
+      "positions": 10,
+      "tickers": [
+        "AMZN",
+        "MA",
+        "NKE",
+        "V",
+        "MCD",
+        "AAPL",
+        "IBM",
+        "NFLX",
+        "AXP",
+        "INTC"
+      ]
+    },
+    {
+      "date": "2011-08-26",
+      "value": 7051.80097345437,
+      "cash": 707.0847811463668,
+      "positions": 9,
+      "tickers": [
+        "MA",
+        "MCD",
+        "V",
+        "AAPL",
+        "NKE",
+        "TGT",
+        "AMZN",
+        "SBUX",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2011-09-30",
+      "value": 6835.829760655331,
+      "cash": 685.4293262759338,
+      "positions": 9,
+      "tickers": [
+        "MA",
+        "AMZN",
+        "AAPL",
+        "MCD",
+        "V",
+        "NKE",
+        "IBM",
+        "COST",
+        "SBUX"
+      ]
+    },
+    {
+      "date": "2011-10-28",
+      "value": 7196.065436190884,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "AAPL",
+        "CSCO",
+        "GOOGL",
+        "GOOG",
+        "TGT",
+        "MA",
+        "INTC",
+        "V",
+        "MCD",
+        "IBM"
+      ]
+    },
+    {
+      "date": "2011-11-25",
+      "value": 6662.230318559896,
+      "cash": 668.0224930452076,
+      "positions": 9,
+      "tickers": [
+        "MA",
+        "TSLA",
+        "CSCO",
+        "WMT",
+        "MCD",
+        "LOW",
+        "HD",
+        "COST",
+        "SBUX"
+      ]
+    },
+    {
+      "date": "2011-12-30",
+      "value": 6765.252232899913,
+      "cash": 1.5916157281026244e-12,
+      "positions": 10,
+      "tickers": [
+        "LOW",
+        "HD",
+        "INTC",
+        "GOOGL",
+        "GOOG",
+        "SBUX",
+        "TSLA",
+        "MRK",
+        "HON",
+        "XOM"
+      ]
+    },
+    {
+      "date": "2012-01-27",
+      "value": 6794.322598412754,
+      "cash": 681.2673990121345,
+      "positions": 9,
+      "tickers": [
+        "CAT",
+        "EOG",
+        "LOW",
+        "HD",
+        "HON",
+        "DIS",
+        "AMD",
+        "SBUX",
+        "SLB"
+      ]
+    },
+    {
+      "date": "2012-02-24",
+      "value": 6878.943582576023,
+      "cash": 1.5916157281026244e-12,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMD",
+        "AAPL",
+        "HD",
+        "EOG",
+        "V",
+        "LOW",
+        "TMUS",
+        "CAT",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2012-03-30",
+      "value": 7050.456978935392,
+      "cash": 706.950018683006,
+      "positions": 9,
+      "tickers": [
+        "BAC",
+        "NFLX",
+        "AAPL",
+        "JPM",
+        "AMD",
+        "MS",
+        "C",
+        "WFC",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2012-04-27",
+      "value": 6417.32112140181,
+      "cash": 1.2505552149377763e-12,
+      "positions": 10,
+      "tickers": [
+        "CRM",
+        "BAC",
+        "AAPL",
+        "AMD",
+        "JPM",
+        "AMZN",
+        "CMCSA",
+        "AXP",
+        "SCHW",
+        "GS"
+      ]
+    },
+    {
+      "date": "2012-05-25",
+      "value": 5779.60020730639,
+      "cash": 579.5210844833102,
+      "positions": 9,
+      "tickers": [
+        "CRM",
+        "AAPL",
+        "MA",
+        "V",
+        "T",
+        "TGT",
+        "ABT",
+        "SBUX",
+        "DIS"
+      ]
+    },
+    {
+      "date": "2012-06-29",
+      "value": 5746.199264856002,
+      "cash": 576.1719686799113,
+      "positions": 9,
+      "tickers": [
+        "AMZN",
+        "WMT",
+        "T",
+        "VZ",
+        "DIS",
+        "ABT",
+        "HD",
+        "MRK",
+        "COST"
+      ]
+    },
+    {
+      "date": "2012-07-27",
+      "value": 5777.686486158221,
+      "cash": 579.3291954744847,
+      "positions": 9,
+      "tickers": [
+        "WMT",
+        "T",
+        "VZ",
+        "MRK",
+        "DIS",
+        "AMZN",
+        "LLY",
+        "ABT",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2012-08-31",
+      "value": 5534.66276516236,
+      "cash": 554.9611829312216,
+      "positions": 9,
+      "tickers": [
+        "TMUS",
+        "WMT",
+        "COST",
+        "AAPL",
+        "TGT",
+        "DIS",
+        "T",
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "date": "2012-09-28",
+      "value": 5474.876736312102,
+      "cash": 1.1368683772161603e-12,
+      "positions": 10,
+      "tickers": [
+        "TMUS",
+        "GOOG",
+        "GOOGL",
+        "MS",
+        "CMCSA",
+        "C",
+        "JPM",
+        "HD",
+        "MRK",
+        "GE"
+      ]
+    },
+    {
+      "date": "2012-10-26",
+      "value": 5279.617571472845,
+      "cash": 2.2737367544323206e-13,
+      "positions": 10,
+      "tickers": [
+        "TMUS",
+        "C",
+        "EOG",
+        "GS",
+        "MS",
+        "CMCSA",
+        "TMO",
+        "LLY",
+        "GOOG",
+        "GOOGL"
+      ]
+    },
+    {
+      "date": "2012-11-30",
+      "value": 5157.322474566881,
+      "cash": 6.821210263296962e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "LOW",
+        "META",
+        "BAC",
+        "C",
+        "CRM",
+        "MS",
+        "TSLA",
+        "HD",
+        "TMUS"
+      ]
+    },
+    {
+      "date": "2012-12-28",
+      "value": 5145.066164617191,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "BAC",
+        "META",
+        "C",
+        "MS",
+        "LOW",
+        "GS",
+        "JPM",
+        "V",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2013-01-25",
+      "value": 5878.124780890529,
+      "cash": 2.2737367544323206e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "META",
+        "MS",
+        "BLK",
+        "C",
+        "TSLA",
+        "BAC",
+        "LOW",
+        "GS",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2013-02-22",
+      "value": 5760.513780149442,
+      "cash": 577.6072865443241,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "MS",
+        "TSLA",
+        "BLK",
+        "GS",
+        "SCHW",
+        "BAC",
+        "AMD",
+        "CSCO"
+      ]
+    },
+    {
+      "date": "2013-03-29",
+      "value": 5523.216243941293,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "SCHW",
+        "BLK",
+        "MS",
+        "ADBE",
+        "C",
+        "AMD",
+        "GS",
+        "BAC",
+        "HON"
+      ]
+    },
+    {
+      "date": "2013-04-26",
+      "value": 5544.333191393819,
+      "cash": 5.684341886080801e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "TSLA",
+        "ABBV",
+        "BLK",
+        "TMO",
+        "VZ",
+        "DIS",
+        "BA",
+        "JNJ",
+        "HD"
+      ]
+    },
+    {
+      "date": "2013-05-31",
+      "value": 5999.283540395255,
+      "cash": 601.5487540223938,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "NFLX",
+        "BA",
+        "AXP",
+        "MSFT",
+        "TMUS",
+        "LMT",
+        "C"
+      ]
+    },
+    {
+      "date": "2013-06-28",
+      "value": 5942.459680175056,
+      "cash": 595.8510199373077,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "TMUS",
+        "BA",
+        "SCHW",
+        "MSFT",
+        "LMT",
+        "UNH",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2013-07-26",
+      "value": 6001.56152917476,
+      "cash": 6.821210263296962e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "TMUS",
+        "META",
+        "NFLX",
+        "SBUX",
+        "UNH",
+        "MS",
+        "LMT",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2013-08-30",
+      "value": 5988.004453512533,
+      "cash": 6.821210263296962e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "META",
+        "NFLX",
+        "TMUS",
+        "EOG",
+        "SCHW",
+        "LMT",
+        "UNH",
+        "LOW",
+        "SBUX"
+      ]
+    },
+    {
+      "date": "2013-09-27",
+      "value": 6337.753688211915,
+      "cash": 635.4871892241873,
+      "positions": 9,
+      "tickers": [
+        "META",
+        "TSLA",
+        "NFLX",
+        "EOG",
+        "CRM",
+        "SBUX",
+        "TMUS",
+        "LMT",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2013-10-25",
+      "value": 6342.090920416714,
+      "cash": 5.684341886080801e-13,
+      "positions": 10,
+      "tickers": [
+        "META",
+        "TSLA",
+        "NFLX",
+        "CRM",
+        "EOG",
+        "AAPL",
+        "AMZN",
+        "SLB",
+        "BA",
+        "MA"
+      ]
+    },
+    {
+      "date": "2013-11-29",
+      "value": 6104.641447190165,
+      "cash": 612.1130017583343,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "BA",
+        "META",
+        "AAPL",
+        "MSFT",
+        "NKE",
+        "ADBE",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2013-12-27",
+      "value": 6141.479614544552,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "TMUS",
+        "AMZN",
+        "MA",
+        "META",
+        "BA",
+        "GOOG",
+        "GOOGL",
+        "ADBE",
+        "NFLX",
+        "V"
+      ]
+    },
+    {
+      "date": "2014-01-31",
+      "value": 5887.81875952487,
+      "cash": 590.3721694188362,
+      "positions": 9,
+      "tickers": [
+        "GOOGL",
+        "GOOG",
+        "NFLX",
+        "META",
+        "TMO",
+        "LMT",
+        "CMCSA",
+        "CVS",
+        "BAC"
+      ]
+    },
+    {
+      "date": "2014-02-28",
+      "value": 6144.23498918401,
+      "cash": 2.2737367544323206e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "NFLX",
+        "META",
+        "TMO",
+        "MRK",
+        "ADBE",
+        "LMT",
+        "NVDA",
+        "LLY",
+        "DIS"
+      ]
+    },
+    {
+      "date": "2014-03-28",
+      "value": 5580.681302770796,
+      "cash": 559.5754662492031,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "META",
+        "TMUS",
+        "EOG",
+        "CAT",
+        "TMO",
+        "LLY",
+        "NVDA",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2014-04-25",
+      "value": 5432.226045518923,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "NVDA",
+        "EOG",
+        "CAT",
+        "MRK",
+        "LLY",
+        "SLB",
+        "LMT",
+        "JNJ",
+        "WFC"
+      ]
+    },
+    {
+      "date": "2014-05-30",
+      "value": 5404.006921071867,
+      "cash": 541.8603085202739,
+      "positions": 9,
+      "tickers": [
+        "AAPL",
+        "EOG",
+        "COP",
+        "NVDA",
+        "SLB",
+        "CVS",
+        "JNJ",
+        "AMD",
+        "DIS"
+      ]
+    },
+    {
+      "date": "2014-06-27",
+      "value": 5530.762186791449,
+      "cash": 554.5700715521394,
+      "positions": 9,
+      "tickers": [
+        "COP",
+        "SLB",
+        "INTC",
+        "EOG",
+        "AAPL",
+        "JNJ",
+        "WFC",
+        "CSCO",
+        "CVX"
+      ]
+    },
+    {
+      "date": "2014-07-25",
+      "value": 5416.030103376628,
+      "cash": 543.0658741992611,
+      "positions": 9,
+      "tickers": [
+        "INTC",
+        "AAPL",
+        "COP",
+        "META",
+        "CSCO",
+        "EOG",
+        "SLB",
+        "NFLX",
+        "CVX"
+      ]
+    },
+    {
+      "date": "2014-08-29",
+      "value": 5354.612507877984,
+      "cash": 536.9075258234102,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "INTC",
+        "TSLA",
+        "AAPL",
+        "META",
+        "HD",
+        "UNH",
+        "MSFT",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2014-09-26",
+      "value": 5076.5451002995205,
+      "cash": 509.02567936011786,
+      "positions": 9,
+      "tickers": [
+        "INTC",
+        "META",
+        "NKE",
+        "HD",
+        "SCHW",
+        "TSLA",
+        "MSFT",
+        "GS",
+        "TGT"
+      ]
+    },
+    {
+      "date": "2014-10-31",
+      "value": 4952.186190560942,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "LMT",
+        "LOW",
+        "HD",
+        "NKE",
+        "AAPL",
+        "COST",
+        "UNH",
+        "META",
+        "MSFT",
+        "CVS"
+      ]
+    },
+    {
+      "date": "2014-11-28",
+      "value": 5029.019358804854,
+      "cash": 504.26026855937647,
+      "positions": 9,
+      "tickers": [
+        "LOW",
+        "ABBV",
+        "NKE",
+        "TGT",
+        "AAPL",
+        "HD",
+        "V",
+        "UNH",
+        "COST"
+      ]
+    },
+    {
+      "date": "2014-12-26",
+      "value": 4911.101890792892,
+      "cash": 492.4366723778565,
+      "positions": 9,
+      "tickers": [
+        "LOW",
+        "TGT",
+        "V",
+        "CVS",
+        "NKE",
+        "ABBV",
+        "UNH",
+        "COST",
+        "MMM"
+      ]
+    },
+    {
+      "date": "2015-01-30",
+      "value": 4641.595186933791,
+      "cash": 2.2737367544323206e-13,
+      "positions": 10,
+      "tickers": [
+        "LOW",
+        "UNH",
+        "CVS",
+        "V",
+        "TGT",
+        "SBUX",
+        "AAPL",
+        "BA",
+        "MMM",
+        "COST"
+      ]
+    },
+    {
+      "date": "2015-02-27",
+      "value": 4779.673901558542,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "LOW",
+        "AMZN",
+        "TGT",
+        "NFLX",
+        "CSCO",
+        "BA",
+        "SBUX",
+        "CVS",
+        "UNH",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2015-03-27",
+      "value": 4589.11285005312,
+      "cash": 8.526512829121202e-13,
+      "positions": 10,
+      "tickers": [
+        "UNH",
+        "NFLX",
+        "SBUX",
+        "LOW",
+        "HD",
+        "DIS",
+        "CVS",
+        "PFE",
+        "BA",
+        "CRM"
+      ]
+    },
+    {
+      "date": "2015-04-24",
+      "value": 4832.500917401685,
+      "cash": 7.958078640513122e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "SBUX",
+        "TMUS",
+        "UNH",
+        "DIS",
+        "AAPL",
+        "BA",
+        "PFE",
+        "CRM"
+      ]
+    },
+    {
+      "date": "2015-05-29",
+      "value": 4775.764843969582,
+      "cash": 478.8664133058428,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "TMUS",
+        "CRM",
+        "TSLA",
+        "SCHW",
+        "JPM",
+        "DIS",
+        "GS"
+      ]
+    },
+    {
+      "date": "2015-06-26",
+      "value": 4853.786031427337,
+      "cash": 486.68960548980004,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "TSLA",
+        "LLY",
+        "TMUS",
+        "ABBV",
+        "SBUX",
+        "AMZN",
+        "NKE",
+        "JPM"
+      ]
+    },
+    {
+      "date": "2015-07-31",
+      "value": 4889.996251902382,
+      "cash": 490.3204078786139,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "TSLA",
+        "ABBV",
+        "TMUS",
+        "SBUX",
+        "GOOGL",
+        "LLY",
+        "GOOG"
+      ]
+    },
+    {
+      "date": "2015-08-28",
+      "value": 4650.474863695618,
+      "cash": 466.3035745905511,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "GOOGL",
+        "TMUS",
+        "GOOG",
+        "LLY",
+        "META",
+        "NKE",
+        "SBUX"
+      ]
+    },
+    {
+      "date": "2015-09-25",
+      "value": 4548.680637805078,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "AMZN",
+        "NKE",
+        "META",
+        "GOOGL",
+        "NFLX",
+        "GOOG",
+        "SBUX",
+        "TMUS",
+        "LLY",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2015-10-30",
+      "value": 4815.3427333628315,
+      "cash": 4.547473508864641e-13,
+      "positions": 10,
+      "tickers": [
+        "AMZN",
+        "NVDA",
+        "GOOG",
+        "GOOGL",
+        "NKE",
+        "MSFT",
+        "LMT",
+        "MCD",
+        "META",
+        "COST"
+      ]
+    },
+    {
+      "date": "2015-11-27",
+      "value": 4870.916816232284,
+      "cash": 4.547473508864641e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "AMZN",
+        "INTC",
+        "AMD",
+        "GOOG",
+        "GE",
+        "MCD",
+        "NKE",
+        "MSFT",
+        "HD"
+      ]
+    },
+    {
+      "date": "2015-12-25",
+      "value": 4857.941690771416,
+      "cash": 487.1062938632934,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "AMZN",
+        "MSFT",
+        "INTC",
+        "GE",
+        "MCD",
+        "CVX",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2016-01-29",
+      "value": 4394.922452830268,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "MCD",
+        "MSFT",
+        "META",
+        "NVDA",
+        "GOOG",
+        "VZ",
+        "GOOGL",
+        "GE",
+        "PG"
+      ]
+    },
+    {
+      "date": "2016-02-26",
+      "value": 4132.6167268006475,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "WMT",
+        "NVDA",
+        "T",
+        "VZ",
+        "PG",
+        "JNJ",
+        "MCD",
+        "ABBV",
+        "TGT",
+        "PYPL"
+      ]
+    },
+    {
+      "date": "2016-03-25",
+      "value": 4249.063750615809,
+      "cash": 4.547473508864641e-13,
+      "positions": 10,
+      "tickers": [
+        "VZ",
+        "AMD",
+        "T",
+        "WMT",
+        "UNH",
+        "TGT",
+        "PYPL",
+        "PG",
+        "NVDA",
+        "MCD"
+      ]
+    },
+    {
+      "date": "2016-04-29",
+      "value": 4080.8028915221134,
+      "cash": 409.1825095908667,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "EOG",
+        "CAT",
+        "T",
+        "SLB",
+        "CVX",
+        "XOM",
+        "VZ",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2016-05-27",
+      "value": 4086.4062146093665,
+      "cash": 7.389644451905042e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "IBM",
+        "CRM",
+        "CSCO",
+        "AXP",
+        "SCHW",
+        "BLK",
+        "CVX",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2016-06-24",
+      "value": 3895.7999871936363,
+      "cash": 6.821210263296962e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "COP",
+        "AMZN",
+        "CVX",
+        "EOG",
+        "UNH",
+        "CRM",
+        "T",
+        "LOW"
+      ]
+    },
+    {
+      "date": "2016-07-29",
+      "value": 4183.140973753558,
+      "cash": 1.0231815394945443e-12,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "AMZN",
+        "PFE",
+        "TMUS",
+        "ABBV",
+        "JNJ",
+        "MS",
+        "LLY",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2016-08-26",
+      "value": 4097.575711222043,
+      "cash": 410.8643218812838,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "AMZN",
+        "MSFT",
+        "TMUS",
+        "MS",
+        "INTC",
+        "AAPL",
+        "MRK"
+      ]
+    },
+    {
+      "date": "2016-09-30",
+      "value": 4048.98127464949,
+      "cash": 405.99175291937195,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "CAT",
+        "EOG",
+        "INTC",
+        "MS",
+        "AAPL",
+        "AMZN",
+        "MRK"
+      ]
+    },
+    {
+      "date": "2016-10-28",
+      "value": 3966.044698875258,
+      "cash": 9.663381206337363e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "NFLX",
+        "MS",
+        "SCHW",
+        "BAC",
+        "MA",
+        "GS",
+        "AAPL",
+        "MSFT"
+      ]
+    },
+    {
+      "date": "2016-11-25",
+      "value": 4472.042963523801,
+      "cash": 448.4121903104983,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "MS",
+        "BAC",
+        "SCHW",
+        "GS",
+        "C",
+        "AMD",
+        "NFLX",
+        "JPM"
+      ]
+    },
+    {
+      "date": "2016-12-30",
+      "value": 4735.735601244648,
+      "cash": 474.8526771782691,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "GS",
+        "BAC",
+        "MS",
+        "JPM",
+        "SCHW",
+        "NFLX",
+        "C"
+      ]
+    },
+    {
+      "date": "2017-01-27",
+      "value": 4803.019984787746,
+      "cash": 481.5992889716581,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "BAC",
+        "GS",
+        "NFLX",
+        "MS",
+        "SCHW",
+        "TMUS",
+        "JPM"
+      ]
+    },
+    {
+      "date": "2017-02-24",
+      "value": 4803.069841418986,
+      "cash": 2.8421709430404007e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "BAC",
+        "GS",
+        "MS",
+        "JPM",
+        "SCHW",
+        "WFC",
+        "TSLA",
+        "BA"
+      ]
+    },
+    {
+      "date": "2017-03-31",
+      "value": 4799.744576146231,
+      "cash": 5.115907697472721e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "TSLA",
+        "AAPL",
+        "ADBE",
+        "LLY",
+        "NFLX",
+        "NVDA",
+        "META",
+        "CRM",
+        "AMZN"
+      ]
+    },
+    {
+      "date": "2017-04-28",
+      "value": 4733.050722831321,
+      "cash": 3.410605131648481e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "META",
+        "ADBE",
+        "CRM",
+        "AAPL",
+        "NFLX",
+        "AMZN",
+        "LOW",
+        "BA",
+        "PYPL"
+      ]
+    },
+    {
+      "date": "2017-05-26",
+      "value": 4834.982342958571,
+      "cash": 5.684341886080801e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AAPL",
+        "ADBE",
+        "MCD",
+        "PYPL",
+        "TMO",
+        "WMT",
+        "AMZN",
+        "NFLX"
+      ]
+    },
+    {
+      "date": "2017-06-30",
+      "value": 4756.972037605135,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "PYPL",
+        "MCD",
+        "ADBE",
+        "ORCL",
+        "ABBV",
+        "CAT",
+        "AMZN",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2017-07-28",
+      "value": 4830.232800881496,
+      "cash": 484.3279207331694,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "BA",
+        "PYPL",
+        "CAT",
+        "NFLX",
+        "MCD",
+        "META",
+        "TSLA",
+        "AMZN"
+      ]
+    },
+    {
+      "date": "2017-08-25",
+      "value": 4675.257595458248,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "BA",
+        "PYPL",
+        "C",
+        "ABT",
+        "MA",
+        "ADBE",
+        "MCD",
+        "V",
+        "CAT"
+      ]
+    },
+    {
+      "date": "2017-09-29",
+      "value": 4678.455009946347,
+      "cash": 5.684341886080801e-13,
+      "positions": 10,
+      "tickers": [
+        "BA",
+        "ABBV",
+        "NVDA",
+        "PYPL",
+        "C",
+        "CAT",
+        "AMD",
+        "ABT",
+        "AXP",
+        "JPM"
+      ]
+    },
+    {
+      "date": "2017-10-27",
+      "value": 4761.488299369209,
+      "cash": 477.43490276658065,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "INTC",
+        "PYPL",
+        "NFLX",
+        "CAT",
+        "BA",
+        "ABBV",
+        "ADBE",
+        "MSFT"
+      ]
+    },
+    {
+      "date": "2017-11-24",
+      "value": 4786.204619861397,
+      "cash": 479.91321066717956,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "ABBV",
+        "PYPL",
+        "INTC",
+        "ADBE",
+        "WMT",
+        "CAT",
+        "MA",
+        "CRM"
+      ]
+    },
+    {
+      "date": "2017-12-29",
+      "value": 4697.424553826222,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "CAT",
+        "INTC",
+        "ABBV",
+        "SCHW",
+        "EOG",
+        "WMT",
+        "HD",
+        "LOW",
+        "COP",
+        "BAC"
+      ]
+    },
+    {
+      "date": "2018-01-26",
+      "value": 5008.848180620416,
+      "cash": 8.526512829121202e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "ABBV",
+        "NVDA",
+        "WMT",
+        "ADBE",
+        "LOW",
+        "BA",
+        "CAT",
+        "PYPL"
+      ]
+    },
+    {
+      "date": "2018-02-23",
+      "value": 4746.114429043775,
+      "cash": 475.89336326832307,
+      "positions": 9,
+      "tickers": [
+        "AMZN",
+        "NFLX",
+        "BA",
+        "ABBV",
+        "CSCO",
+        "NVDA",
+        "TGT",
+        "ADBE",
+        "MSFT"
+      ]
+    },
+    {
+      "date": "2018-03-30",
+      "value": 4391.986967803086,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "ADBE",
+        "BA",
+        "COP",
+        "INTC",
+        "TGT",
+        "MA",
+        "CSCO",
+        "NVDA"
+      ]
+    },
+    {
+      "date": "2018-04-27",
+      "value": 4398.304746022787,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "AMZN",
+        "ADBE",
+        "COP",
+        "CSCO",
+        "CRM",
+        "MA",
+        "BA",
+        "INTC",
+        "NVDA"
+      ]
+    },
+    {
+      "date": "2018-05-25",
+      "value": 4480.090208785361,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "INTC",
+        "ADBE",
+        "AMZN",
+        "CRM",
+        "MA",
+        "COP",
+        "AAPL",
+        "AMD",
+        "MSFT"
+      ]
+    },
+    {
+      "date": "2018-06-29",
+      "value": 4503.309402214458,
+      "cash": 451.5472792107709,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "COP",
+        "AMD",
+        "EOG",
+        "NKE",
+        "ADBE",
+        "MRK",
+        "CRM",
+        "CVX"
+      ]
+    },
+    {
+      "date": "2018-07-27",
+      "value": 4463.400370473246,
+      "cash": 9.663381206337363e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "LLY",
+        "AMZN",
+        "CRM",
+        "EOG",
+        "COP",
+        "GOOGL",
+        "NFLX",
+        "GOOG",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2018-08-31",
+      "value": 4585.858593848161,
+      "cash": 459.8244948213436,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "LLY",
+        "LOW",
+        "AAPL",
+        "AMZN",
+        "PYPL",
+        "TGT",
+        "NKE",
+        "CRM"
+      ]
+    },
+    {
+      "date": "2018-09-28",
+      "value": 4557.956055311732,
+      "cash": 7.389644451905042e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "LLY",
+        "TMUS",
+        "CVS",
+        "PFE",
+        "CRM",
+        "AMZN",
+        "TGT",
+        "LOW",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2018-10-26",
+      "value": 4054.8409812691602,
+      "cash": 7.389644451905042e-13,
+      "positions": 10,
+      "tickers": [
+        "LLY",
+        "SBUX",
+        "PFE",
+        "MRK",
+        "AAPL",
+        "WMT",
+        "AMD",
+        "PG",
+        "JNJ",
+        "TMO"
+      ]
+    },
+    {
+      "date": "2018-11-30",
+      "value": 4256.945590407216,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "SBUX",
+        "CVS",
+        "MCD",
+        "MRK",
+        "LLY",
+        "PFE",
+        "VZ",
+        "PG",
+        "ABT",
+        "JNJ"
+      ]
+    },
+    {
+      "date": "2018-12-28",
+      "value": 3815.5898975591135,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "SBUX",
+        "MRK",
+        "PG",
+        "TSLA",
+        "MCD",
+        "LLY",
+        "ABT",
+        "PFE",
+        "VZ",
+        "INTC"
+      ]
+    },
+    {
+      "date": "2019-01-25",
+      "value": 3730.030763840793,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "SBUX",
+        "PG",
+        "MCD",
+        "LLY",
+        "VZ",
+        "PYPL",
+        "MRK",
+        "WMT",
+        "INTC",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2019-02-22",
+      "value": 3792.617736433449,
+      "cash": 2.2737367544323206e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "SBUX",
+        "CAT",
+        "INTC",
+        "BA",
+        "NKE",
+        "MRK",
+        "LLY",
+        "NFLX",
+        "MMM"
+      ]
+    },
+    {
+      "date": "2019-03-29",
+      "value": 3623.014011744343,
+      "cash": 363.27997333276465,
+      "positions": 9,
+      "tickers": [
+        "GE",
+        "NFLX",
+        "PYPL",
+        "META",
+        "MA",
+        "AMD",
+        "LOW",
+        "IBM",
+        "CSCO"
+      ]
+    },
+    {
+      "date": "2019-04-26",
+      "value": 3628.416684335025,
+      "cash": 363.82169984784537,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "NFLX",
+        "META",
+        "GE",
+        "NVDA",
+        "C",
+        "RTX",
+        "AMZN",
+        "CSCO"
+      ]
+    },
+    {
+      "date": "2019-05-31",
+      "value": 3358.6123483783567,
+      "cash": 336.7683923934223,
+      "positions": 9,
+      "tickers": [
+        "PYPL",
+        "V",
+        "MSFT",
+        "MA",
+        "LMT",
+        "DIS",
+        "HON",
+        "SBUX",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2019-06-28",
+      "value": 3427.8147007952934,
+      "cash": 343.70731911550956,
+      "positions": 9,
+      "tickers": [
+        "AMD",
+        "DIS",
+        "COST",
+        "TGT",
+        "MSFT",
+        "SBUX",
+        "META",
+        "LMT",
+        "MA"
+      ]
+    },
+    {
+      "date": "2019-07-26",
+      "value": 3531.9493246485895,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "SBUX",
+        "DIS",
+        "LMT",
+        "TMUS",
+        "MSFT",
+        "META",
+        "MA",
+        "V",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2019-08-30",
+      "value": 3292.2748169179295,
+      "cash": 3.410605131648481e-13,
+      "positions": 10,
+      "tickers": [
+        "TGT",
+        "SBUX",
+        "COST",
+        "T",
+        "LMT",
+        "PG",
+        "UPS",
+        "HD",
+        "WMT",
+        "MA"
+      ]
+    },
+    {
+      "date": "2019-09-27",
+      "value": 3169.069258134006,
+      "cash": 317.7628879857188,
+      "positions": 9,
+      "tickers": [
+        "TGT",
+        "TSLA",
+        "UPS",
+        "NVDA",
+        "AAPL",
+        "HD",
+        "T",
+        "PG",
+        "CVS"
+      ]
+    },
+    {
+      "date": "2019-10-25",
+      "value": 3284.6072915162745,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "TGT",
+        "NVDA",
+        "AAPL",
+        "CVS",
+        "INTC",
+        "GOOG",
+        "JPM",
+        "GOOGL",
+        "T"
+      ]
+    },
+    {
+      "date": "2019-11-29",
+      "value": 3401.3010606970074,
+      "cash": 341.04879380022265,
+      "positions": 9,
+      "tickers": [
+        "TGT",
+        "TSLA",
+        "CVS",
+        "ABBV",
+        "NVDA",
+        "AMD",
+        "AAPL",
+        "SCHW",
+        "INTC"
+      ]
+    },
+    {
+      "date": "2019-12-27",
+      "value": 3536.6886804492206,
+      "cash": 354.6241238248205,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "NVDA",
+        "AAPL",
+        "GE",
+        "ABBV",
+        "BAC",
+        "UNH",
+        "INTC"
+      ]
+    },
+    {
+      "date": "2020-01-31",
+      "value": 3592.2217318523694,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "GE",
+        "AAPL",
+        "MS",
+        "LLY",
+        "NVDA",
+        "SCHW",
+        "ADBE",
+        "NFLX"
+      ]
+    },
+    {
+      "date": "2020-02-28",
+      "value": 3401.8274810188955,
+      "cash": 341.1015780179702,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "NVDA",
+        "AMD",
+        "NFLX",
+        "ADBE",
+        "MSFT",
+        "LLY",
+        "AAPL",
+        "ABBV"
+      ]
+    },
+    {
+      "date": "2020-03-27",
+      "value": 3071.20043519866,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "NVDA",
+        "LLY",
+        "NFLX",
+        "AMZN",
+        "TMUS",
+        "MSFT",
+        "ADBE",
+        "COST"
+      ]
+    },
+    {
+      "date": "2020-04-24",
+      "value": 3550.816805832074,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "AMZN",
+        "NFLX",
+        "LLY",
+        "NVDA",
+        "AMD",
+        "TMUS",
+        "MSFT",
+        "PYPL",
+        "WMT"
+      ]
+    },
+    {
+      "date": "2020-05-29",
+      "value": 3655.6824206469537,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "PYPL",
+        "AMZN",
+        "TSLA",
+        "TMUS",
+        "NFLX",
+        "ABBV",
+        "AMD",
+        "LOW",
+        "TMO"
+      ]
+    },
+    {
+      "date": "2020-06-26",
+      "value": 3733.2824688120727,
+      "cash": 1.1368683772161603e-12,
+      "positions": 10,
+      "tickers": [
+        "PYPL",
+        "NVDA",
+        "AMZN",
+        "TSLA",
+        "AAPL",
+        "LLY",
+        "ADBE",
+        "MSFT",
+        "LOW",
+        "UPS"
+      ]
+    },
+    {
+      "date": "2020-07-31",
+      "value": 4208.630164254183,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "PYPL",
+        "LOW",
+        "AMD",
+        "AAPL",
+        "NVDA",
+        "AMZN",
+        "META",
+        "UPS",
+        "HD"
+      ]
+    },
+    {
+      "date": "2020-08-28",
+      "value": 4732.147898500932,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "NVDA",
+        "UPS",
+        "AAPL",
+        "CRM",
+        "PYPL",
+        "AMD",
+        "LOW",
+        "ADBE",
+        "META"
+      ]
+    },
+    {
+      "date": "2020-09-25",
+      "value": 4321.106261673759,
+      "cash": 5.115907697472721e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "UPS",
+        "NVDA",
+        "AMD",
+        "AAPL",
+        "CRM",
+        "TGT",
+        "AMZN",
+        "NKE",
+        "ADBE"
+      ]
+    },
+    {
+      "date": "2020-10-30",
+      "value": 4066.2986760183494,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "AMD",
+        "UPS",
+        "NVDA",
+        "TMO",
+        "TGT",
+        "CAT",
+        "SCHW",
+        "NKE",
+        "CRM"
+      ]
+    },
+    {
+      "date": "2020-11-27",
+      "value": 4662.256120326144,
+      "cash": 467.48488235825164,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "GE",
+        "SCHW",
+        "TGT",
+        "HON",
+        "NKE",
+        "BA",
+        "MS",
+        "RTX"
+      ]
+    },
+    {
+      "date": "2020-12-25",
+      "value": 4653.45226243352,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "GE",
+        "TSLA",
+        "SCHW",
+        "MS",
+        "DIS",
+        "NKE",
+        "HON",
+        "CAT",
+        "BA",
+        "GS"
+      ]
+    },
+    {
+      "date": "2021-01-29",
+      "value": 4478.167469283475,
+      "cash": 449.02629510883406,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "GE",
+        "SLB",
+        "EOG",
+        "LLY",
+        "MS",
+        "XOM",
+        "GS",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2021-02-26",
+      "value": 5011.219185936025,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "SLB",
+        "EOG",
+        "COP",
+        "WFC",
+        "XOM",
+        "GE",
+        "GS",
+        "TSLA",
+        "C",
+        "MS"
+      ]
+    },
+    {
+      "date": "2021-03-26",
+      "value": 5076.293405115814,
+      "cash": 509.0004418591509,
+      "positions": 9,
+      "tickers": [
+        "EOG",
+        "XOM",
+        "GS",
+        "WFC",
+        "INTC",
+        "BAC",
+        "SCHW",
+        "CAT",
+        "SLB"
+      ]
+    },
+    {
+      "date": "2021-04-30",
+      "value": 4954.007559594884,
+      "cash": 1.4210854715202004e-12,
+      "positions": 10,
+      "tickers": [
+        "WFC",
+        "EOG",
+        "XOM",
+        "GOOG",
+        "BAC",
+        "GOOGL",
+        "SCHW",
+        "GS",
+        "COP",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2021-05-28",
+      "value": 5064.808215752761,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "WFC",
+        "EOG",
+        "BAC",
+        "SLB",
+        "SCHW",
+        "UPS",
+        "COP",
+        "GS",
+        "AXP",
+        "C"
+      ]
+    },
+    {
+      "date": "2021-06-25",
+      "value": 5019.042743211128,
+      "cash": 4.547473508864641e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "META",
+        "UPS",
+        "TGT",
+        "BLK",
+        "ADBE",
+        "GOOG",
+        "EOG",
+        "HD",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2021-07-30",
+      "value": 5003.9037426597915,
+      "cash": 8.526512829121202e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "LLY",
+        "AMD",
+        "TGT",
+        "ADBE",
+        "NKE",
+        "GOOGL",
+        "GOOG",
+        "MS",
+        "ORCL"
+      ]
+    },
+    {
+      "date": "2021-08-27",
+      "value": 5156.750944154185,
+      "cash": 517.0679272570898,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "LLY",
+        "AMD",
+        "ADBE",
+        "MS",
+        "NKE",
+        "PFE",
+        "TGT",
+        "COST"
+      ]
+    },
+    {
+      "date": "2021-09-24",
+      "value": 4911.123971109817,
+      "cash": 492.43888637341945,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "TMO",
+        "CRM",
+        "ADBE",
+        "TSLA",
+        "COST",
+        "GOOGL",
+        "MSFT"
+      ]
+    },
+    {
+      "date": "2021-10-29",
+      "value": 5166.977441680343,
+      "cash": 518.0933391756062,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "NFLX",
+        "AMD",
+        "NVDA",
+        "COST",
+        "TMO",
+        "CRM",
+        "MSFT",
+        "ORCL"
+      ]
+    },
+    {
+      "date": "2021-11-26",
+      "value": 5265.861876537013,
+      "cash": 1.0231815394945443e-12,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "AMD",
+        "NFLX",
+        "COST",
+        "LOW",
+        "PFE",
+        "COP",
+        "HD",
+        "TMO"
+      ]
+    },
+    {
+      "date": "2021-12-31",
+      "value": 5043.091348734343,
+      "cash": 1.7053025658242404e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "EOG",
+        "AMD",
+        "NVDA",
+        "COP",
+        "PFE",
+        "HD",
+        "LOW",
+        "COST",
+        "ABBV"
+      ]
+    },
+    {
+      "date": "2022-01-28",
+      "value": 4966.102400346595,
+      "cash": 497.95157891125405,
+      "positions": 9,
+      "tickers": [
+        "EOG",
+        "SLB",
+        "COP",
+        "ABBV",
+        "CVX",
+        "CVS",
+        "XOM",
+        "PFE",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2022-02-25",
+      "value": 4832.691203411933,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "ABBV",
+        "CVX",
+        "LMT",
+        "XOM",
+        "COP",
+        "SLB",
+        "CVS",
+        "EOG",
+        "PFE",
+        "PG"
+      ]
+    },
+    {
+      "date": "2022-03-25",
+      "value": 5244.704806258918,
+      "cash": 525.8870697104031,
+      "positions": 9,
+      "tickers": [
+        "COP",
+        "CVX",
+        "SLB",
+        "EOG",
+        "XOM",
+        "ABBV",
+        "LMT",
+        "BRK-B",
+        "RTX"
+      ]
+    },
+    {
+      "date": "2022-04-29",
+      "value": 4719.432968470855,
+      "cash": 473.218010577445,
+      "positions": 9,
+      "tickers": [
+        "XOM",
+        "CVX",
+        "EOG",
+        "COP",
+        "SLB",
+        "LMT",
+        "MRK",
+        "RTX",
+        "ABBV"
+      ]
+    },
+    {
+      "date": "2022-05-27",
+      "value": 5065.668513901757,
+      "cash": 507.93508296614255,
+      "positions": 9,
+      "tickers": [
+        "LLY",
+        "CVX",
+        "XOM",
+        "COP",
+        "EOG",
+        "TMUS",
+        "SLB",
+        "T",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2022-06-24",
+      "value": 4555.95809580741,
+      "cash": 456.8263689251507,
+      "positions": 9,
+      "tickers": [
+        "LLY",
+        "MRK",
+        "T",
+        "IBM",
+        "JNJ",
+        "XOM",
+        "PFE",
+        "TMUS",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2022-07-29",
+      "value": 4401.30058866032,
+      "cash": 441.3188453853629,
+      "positions": 9,
+      "tickers": [
+        "XOM",
+        "LLY",
+        "TMUS",
+        "MRK",
+        "T",
+        "MCD",
+        "UNH",
+        "IBM",
+        "GS"
+      ]
+    },
+    {
+      "date": "2022-08-26",
+      "value": 4236.992430034301,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "COP",
+        "XOM",
+        "NFLX",
+        "SBUX",
+        "TMUS",
+        "EOG",
+        "LLY",
+        "BA",
+        "UPS",
+        "GS"
+      ]
+    },
+    {
+      "date": "2022-09-30",
+      "value": 3710.1789452118237,
+      "cash": 5.115907697472721e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "LLY",
+        "SBUX",
+        "UNH",
+        "TSLA",
+        "WMT",
+        "SCHW",
+        "TMUS",
+        "CVS",
+        "PYPL"
+      ]
+    },
+    {
+      "date": "2022-10-28",
+      "value": 3757.890993848233,
+      "cash": 376.8041016698551,
+      "positions": 9,
+      "tickers": [
+        "NFLX",
+        "COP",
+        "SLB",
+        "XOM",
+        "SCHW",
+        "CVX",
+        "CAT",
+        "EOG",
+        "PYPL"
+      ]
+    },
+    {
+      "date": "2022-11-25",
+      "value": 3724.3804369068926,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "SLB",
+        "COP",
+        "EOG",
+        "NFLX",
+        "CAT",
+        "XOM",
+        "CVX",
+        "SCHW",
+        "GE",
+        "MRK"
+      ]
+    },
+    {
+      "date": "2022-12-30",
+      "value": 3498.0131756988253,
+      "cash": 350.74612713786,
+      "positions": 9,
+      "tickers": [
+        "SLB",
+        "CAT",
+        "MRK",
+        "NFLX",
+        "BA",
+        "LLY",
+        "XOM",
+        "JPM",
+        "ABBV"
+      ]
+    },
+    {
+      "date": "2023-01-27",
+      "value": 3653.3080688354535,
+      "cash": 366.31756143386673,
+      "positions": 9,
+      "tickers": [
+        "GE",
+        "BA",
+        "NVDA",
+        "CAT",
+        "SLB",
+        "NFLX",
+        "ORCL",
+        "BLK",
+        "JPM"
+      ]
+    },
+    {
+      "date": "2023-02-24",
+      "value": 3397.836506411678,
+      "cash": 340.701402599332,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "META",
+        "BA",
+        "GE",
+        "AMD",
+        "NKE",
+        "MS",
+        "SBUX",
+        "AXP"
+      ]
+    },
+    {
+      "date": "2023-03-31",
+      "value": 3649.2544492951884,
+      "cash": 5.684341886080801e-13,
+      "positions": 10,
+      "tickers": [
+        "META",
+        "NVDA",
+        "GE",
+        "CRM",
+        "AMD",
+        "BA",
+        "MSFT",
+        "ADBE",
+        "AAPL",
+        "NKE"
+      ]
+    },
+    {
+      "date": "2023-04-28",
+      "value": 3556.9983455830525,
+      "cash": 9.663381206337363e-13,
+      "positions": 10,
+      "tickers": [
+        "META",
+        "NVDA",
+        "GE",
+        "CRM",
+        "AMD",
+        "TSLA",
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "GOOG"
+      ]
+    },
+    {
+      "date": "2023-05-26",
+      "value": 3980.509330254536,
+      "cash": 7.958078640513122e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "META",
+        "AMD",
+        "MSFT",
+        "CRM",
+        "GOOGL",
+        "GE",
+        "GOOG",
+        "LLY",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2023-06-30",
+      "value": 3958.821712739851,
+      "cash": 396.95144472844163,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "META",
+        "LLY",
+        "ADBE",
+        "AMD",
+        "AMZN",
+        "NFLX",
+        "ORCL",
+        "TSLA"
+      ]
+    },
+    {
+      "date": "2023-07-28",
+      "value": 3973.612691465415,
+      "cash": 3.410605131648481e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "META",
+        "ADBE",
+        "TSLA",
+        "LLY",
+        "GOOGL",
+        "GOOG",
+        "AMZN",
+        "ORCL",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2023-08-25",
+      "value": 3697.4517978092126,
+      "cash": 370.74385750460056,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "TSLA",
+        "LLY",
+        "ADBE",
+        "CAT",
+        "NFLX",
+        "ORCL",
+        "AMZN",
+        "GOOGL"
+      ]
+    },
+    {
+      "date": "2023-09-29",
+      "value": 3469.5863014342326,
+      "cash": 0.0,
+      "positions": 10,
+      "tickers": [
+        "CAT",
+        "SLB",
+        "LLY",
+        "COP",
+        "TSLA",
+        "ADBE",
+        "EOG",
+        "XOM",
+        "INTC",
+        "CMCSA"
+      ]
+    },
+    {
+      "date": "2023-10-27",
+      "value": 3167.457634493369,
+      "cash": 317.6012903238565,
+      "positions": 9,
+      "tickers": [
+        "LLY",
+        "SLB",
+        "COP",
+        "EOG",
+        "UNH",
+        "INTC",
+        "IBM",
+        "ABBV",
+        "META"
+      ]
+    },
+    {
+      "date": "2023-11-24",
+      "value": 3287.2030269730885,
+      "cash": 329.6081726725697,
+      "positions": 9,
+      "tickers": [
+        "LLY",
+        "INTC",
+        "ADBE",
+        "NFLX",
+        "MSFT",
+        "AMZN",
+        "VZ",
+        "T",
+        "DIS"
+      ]
+    },
+    {
+      "date": "2023-12-29",
+      "value": 3248.7050294174924,
+      "cash": 2.8421709430404007e-13,
+      "positions": 10,
+      "tickers": [
+        "INTC",
+        "AMD",
+        "C",
+        "COST",
+        "CVS",
+        "WFC",
+        "META",
+        "AXP",
+        "CRM",
+        "GS"
+      ]
+    },
+    {
+      "date": "2024-01-26",
+      "value": 3292.0615276630647,
+      "cash": 8.526512829121202e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NFLX",
+        "NVDA",
+        "CRM",
+        "VZ",
+        "AXP",
+        "IBM",
+        "C",
+        "TGT",
+        "META"
+      ]
+    },
+    {
+      "date": "2024-02-23",
+      "value": 3439.963876039523,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "META",
+        "AXP",
+        "CRM",
+        "AMZN",
+        "C",
+        "NFLX",
+        "GE",
+        "TGT"
+      ]
+    },
+    {
+      "date": "2024-03-29",
+      "value": 3590.0244336240517,
+      "cash": 359.9721050714365,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "META",
+        "CAT",
+        "GE",
+        "C",
+        "AXP",
+        "TGT",
+        "DIS"
+      ]
+    },
+    {
+      "date": "2024-04-26",
+      "value": 3321.063420736341,
+      "cash": 2.8421709430404007e-13,
+      "positions": 10,
+      "tickers": [
+        "NVDA",
+        "GE",
+        "LLY",
+        "AXP",
+        "DIS",
+        "META",
+        "GOOG",
+        "C",
+        "GOOGL",
+        "WFC"
+      ]
+    },
+    {
+      "date": "2024-05-31",
+      "value": 3293.5993390920175,
+      "cash": 330.2495315214339,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "GE",
+        "MMM",
+        "LLY",
+        "WFC",
+        "GOOGL",
+        "GOOG",
+        "GS",
+        "BAC"
+      ]
+    },
+    {
+      "date": "2024-06-28",
+      "value": 3233.3326814727598,
+      "cash": 324.2065878005959,
+      "positions": 9,
+      "tickers": [
+        "NVDA",
+        "MMM",
+        "GOOGL",
+        "GOOG",
+        "GE",
+        "ORCL",
+        "LLY",
+        "GS",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2024-07-26",
+      "value": 3134.0720757031672,
+      "cash": 6.252776074688882e-13,
+      "positions": 10,
+      "tickers": [
+        "MMM",
+        "AAPL",
+        "NVDA",
+        "TSLA",
+        "GE",
+        "GS",
+        "RTX",
+        "WMT",
+        "LMT",
+        "UNH"
+      ]
+    },
+    {
+      "date": "2024-08-30",
+      "value": 3080.6180225224707,
+      "cash": 308.89387384168094,
+      "positions": 9,
+      "tickers": [
+        "MMM",
+        "NVDA",
+        "AAPL",
+        "WMT",
+        "SBUX",
+        "LLY",
+        "IBM",
+        "NFLX",
+        "LMT"
+      ]
+    },
+    {
+      "date": "2024-09-27",
+      "value": 3114.7942958487824,
+      "cash": 312.3207321487006,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "ORCL",
+        "MMM",
+        "IBM",
+        "LMT",
+        "CRM",
+        "T",
+        "ABBV",
+        "BLK"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "value": 2958.1934747309424,
+      "cash": 9.094947017729282e-13,
+      "positions": 10,
+      "tickers": [
+        "PYPL",
+        "TSLA",
+        "TMUS",
+        "IBM",
+        "BLK",
+        "RTX",
+        "ORCL",
+        "SBUX",
+        "MS",
+        "LOW"
+      ]
+    },
+    {
+      "date": "2024-11-29",
+      "value": 2997.3459897248026,
+      "cash": 300.54417887609674,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "NFLX",
+        "SBUX",
+        "WFC",
+        "ORCL",
+        "WMT",
+        "TMUS",
+        "PYPL",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2024-12-27",
+      "value": 2913.403445737657,
+      "cash": 4.547473508864641e-13,
+      "positions": 10,
+      "tickers": [
+        "TSLA",
+        "CRM",
+        "NFLX",
+        "AMZN",
+        "DIS",
+        "WFC",
+        "MS",
+        "ORCL",
+        "WMT",
+        "GOOGL"
+      ]
+    },
+    {
+      "date": "2025-01-31",
+      "value": 2945.0615629363415,
+      "cash": 295.30161423023526,
+      "positions": 9,
+      "tickers": [
+        "TSLA",
+        "WFC",
+        "NFLX",
+        "MS",
+        "C",
+        "GS",
+        "JPM",
+        "SCHW",
+        "AMZN"
+      ]
+    },
+    {
+      "date": "2025-02-28",
+      "value": 2724.663603838391,
+      "cash": 1.1368683772161603e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "C",
+        "V",
+        "IBM",
+        "T",
+        "ABT",
+        "MMM",
+        "WFC",
+        "TMUS",
+        "GS"
+      ]
+    },
+    {
+      "date": "2025-03-28",
+      "value": 2467.907013584077,
+      "cash": 7.105427357601002e-13,
+      "positions": 10,
+      "tickers": [
+        "T",
+        "CVS",
+        "ABBV",
+        "BA",
+        "ABT",
+        "GE",
+        "MMM",
+        "V",
+        "BRK-B",
+        "RTX"
+      ]
+    },
+    {
+      "date": "2025-04-25",
+      "value": 2161.2606065405635,
+      "cash": 216.70981480173597,
+      "positions": 9,
+      "tickers": [
+        "CVS",
+        "T",
+        "NFLX",
+        "GE",
+        "BRK-B",
+        "ABT",
+        "LLY",
+        "VZ",
+        "MCD"
+      ]
+    },
+    {
+      "date": "2025-05-30",
+      "value": 2139.0201595548147,
+      "cash": 3.410605131648481e-13,
+      "positions": 10,
+      "tickers": [
+        "NFLX",
+        "GE",
+        "T",
+        "BA",
+        "CVS",
+        "VZ",
+        "MSFT",
+        "MCD",
+        "NVDA",
+        "ABBV"
+      ]
+    },
+    {
+      "date": "2025-06-27",
+      "value": 2177.7186224158318,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NFLX",
+        "NVDA",
+        "ORCL",
+        "GE",
+        "MSFT",
+        "BA",
+        "IBM",
+        "SCHW",
+        "TSLA"
+      ]
+    },
+    {
+      "date": "2025-07-25",
+      "value": 2230.5648397386885,
+      "cash": 2.8421709430404007e-13,
+      "positions": 10,
+      "tickers": [
+        "ORCL",
+        "AMD",
+        "NVDA",
+        "C",
+        "GE",
+        "MSFT",
+        "GS",
+        "BA",
+        "CAT",
+        "SCHW"
+      ]
+    },
+    {
+      "date": "2025-08-29",
+      "value": 2143.564372121785,
+      "cash": 7.105427357601002e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "NVDA",
+        "ORCL",
+        "C",
+        "NKE",
+        "GS",
+        "GE",
+        "CAT",
+        "GOOGL",
+        "GOOG"
+      ]
+    },
+    {
+      "date": "2025-09-26",
+      "value": 2300.132128984047,
+      "cash": 5.684341886080802e-14,
+      "positions": 10,
+      "tickers": [
+        "INTC",
+        "ORCL",
+        "GOOGL",
+        "GOOG",
+        "AMD",
+        "C",
+        "GS",
+        "CAT",
+        "NVDA",
+        "AAPL"
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "value": 2497.4511072616597,
+      "cash": 3.979039320256561e-13,
+      "positions": 10,
+      "tickers": [
+        "AMD",
+        "INTC",
+        "GOOGL",
+        "GOOG",
+        "CAT",
+        "TSLA",
+        "TMO",
+        "NVDA",
+        "AAPL",
+        "GE"
+      ]
+    }
+  ],
+  "monthly_returns": [
+    {
+      "date": "2010-02-26",
+      "return": -1.4589524673634207,
+      "value": 8713.692934911915
+    },
+    {
+      "date": "2010-03-26",
+      "return": 2.341544889504683,
+      "value": 8917.727966516475
+    },
+    {
+      "date": "2010-04-30",
+      "return": 1.9058440860372636,
+      "value": 9087.68595757522
+    },
+    {
+      "date": "2010-05-28",
+      "return": -7.040813290510442,
+      "value": 8447.838956874413
+    },
+    {
+      "date": "2010-06-25",
+      "return": -1.7705853372484026,
+      "value": 8298.262758989636
+    },
+    {
+      "date": "2010-07-30",
+      "return": -2.325699645621345,
+      "value": 8105.2700914110865
+    },
+    {
+      "date": "2010-08-27",
+      "return": 0.541626042412755,
+      "value": 8149.170345034061
+    },
+    {
+      "date": "2010-09-24",
+      "return": 8.04919151760963,
+      "value": 8805.112673202102
+    },
+    {
+      "date": "2010-10-29",
+      "return": -2.6960902961560698,
+      "value": 8567.718884854292
+    },
+    {
+      "date": "2010-11-26",
+      "return": 5.862692167859277,
+      "value": 9070.017868880845
+    },
+    {
+      "date": "2010-12-31",
+      "return": -2.6933666317647003,
+      "value": 8825.729034105312
+    },
+    {
+      "date": "2011-01-28",
+      "return": 0.7070303767500321,
+      "value": 8888.129619346084
+    },
+    {
+      "date": "2011-02-25",
+      "return": 0.9227372734602064,
+      "value": 8970.143704257247
+    },
+    {
+      "date": "2011-03-25",
+      "return": -5.177354101056229,
+      "value": 8505.727601314247
+    },
+    {
+      "date": "2011-04-29",
+      "return": -1.6567022789877046,
+      "value": 8364.813018298788
+    },
+    {
+      "date": "2011-05-27",
+      "return": -2.1605889882675253,
+      "value": 8184.083789336256
+    },
+    {
+      "date": "2011-06-24",
+      "return": -6.753269328549057,
+      "value": 7631.390568968255
+    },
+    {
+      "date": "2011-07-29",
+      "return": 0.8121529568939176,
+      "value": 7693.369133126254
+    },
+    {
+      "date": "2011-08-26",
+      "return": -8.33923536710864,
+      "value": 7051.80097345437
+    },
+    {
+      "date": "2011-09-30",
+      "return": -3.0626390848527416,
+      "value": 6835.829760655331
+    },
+    {
+      "date": "2011-10-28",
+      "return": 5.269816366828574,
+      "value": 7196.065436190884
+    },
+    {
+      "date": "2011-11-25",
+      "return": -7.418430562709899,
+      "value": 6662.230318559896
+    },
+    {
+      "date": "2011-12-30",
+      "return": 1.5463577422866164,
+      "value": 6765.252232899913
+    },
+    {
+      "date": "2012-01-27",
+      "return": 0.42970113326255016,
+      "value": 6794.322598412754
+    },
+    {
+      "date": "2012-02-24",
+      "return": 1.245466092278833,
+      "value": 6878.943582576023
+    },
+    {
+      "date": "2012-03-30",
+      "return": 2.4933101180507236,
+      "value": 7050.456978935392
+    },
+    {
+      "date": "2012-04-27",
+      "return": -8.980068376066939,
+      "value": 6417.32112140181
+    },
+    {
+      "date": "2012-05-25",
+      "return": -9.93749419782994,
+      "value": 5779.60020730639
+    },
+    {
+      "date": "2012-06-29",
+      "return": -0.5779109497602261,
+      "value": 5746.199264856002
+    },
+    {
+      "date": "2012-07-27",
+      "return": 0.5479660528794437,
+      "value": 5777.686486158221
+    },
+    {
+      "date": "2012-08-31",
+      "return": -4.206246247145459,
+      "value": 5534.66276516236
+    },
+    {
+      "date": "2012-09-28",
+      "return": -1.0802108707792986,
+      "value": 5474.876736312102
+    },
+    {
+      "date": "2012-10-26",
+      "return": -3.5664577349148603,
+      "value": 5279.617571472845
+    },
+    {
+      "date": "2012-11-30",
+      "return": -2.3163627904936956,
+      "value": 5157.322474566881
+    },
+    {
+      "date": "2012-12-28",
+      "return": -0.2376487025996847,
+      "value": 5145.066164617191
+    },
+    {
+      "date": "2013-01-25",
+      "return": 14.247797653499756,
+      "value": 5878.124780890529
+    },
+    {
+      "date": "2013-02-22",
+      "return": -2.000825180224724,
+      "value": 5760.513780149442
+    },
+    {
+      "date": "2013-03-29",
+      "return": -4.119381452152219,
+      "value": 5523.216243941293
+    },
+    {
+      "date": "2013-04-26",
+      "return": 0.38233062983348126,
+      "value": 5544.333191393819
+    },
+    {
+      "date": "2013-05-31",
+      "return": 8.205681969251625,
+      "value": 5999.283540395255
+    },
+    {
+      "date": "2013-06-28",
+      "return": -0.9471774393989607,
+      "value": 5942.459680175056
+    },
+    {
+      "date": "2013-07-26",
+      "return": 0.9945687843179953,
+      "value": 6001.56152917476
+    },
+    {
+      "date": "2013-08-30",
+      "return": -0.22589247142304178,
+      "value": 5988.004453512533
+    },
+    {
+      "date": "2013-09-27",
+      "return": 5.8408312387647126,
+      "value": 6337.753688211915
+    },
+    {
+      "date": "2013-10-25",
+      "return": 0.06843484960398705,
+      "value": 6342.090920416714
+    },
+    {
+      "date": "2013-11-29",
+      "return": -3.744025057448192,
+      "value": 6104.641447190165
+    },
+    {
+      "date": "2013-12-27",
+      "return": 0.6034452256215986,
+      "value": 6141.479614544552
+    },
+    {
+      "date": "2014-01-31",
+      "return": -4.1302889684588315,
+      "value": 5887.81875952487
+    },
+    {
+      "date": "2014-02-28",
+      "return": 4.3550292584045565,
+      "value": 6144.23498918401
+    },
+    {
+      "date": "2014-03-28",
+      "return": -9.172072477782262,
+      "value": 5580.681302770796
+    },
+    {
+      "date": "2014-04-25",
+      "return": -2.6601636824909813,
+      "value": 5432.226045518923
+    },
+    {
+      "date": "2014-05-30",
+      "return": -0.5194762554171338,
+      "value": 5404.006921071867
+    },
+    {
+      "date": "2014-06-27",
+      "return": 2.3455792631449945,
+      "value": 5530.762186791449
+    },
+    {
+      "date": "2014-07-25",
+      "return": -2.0744353045738118,
+      "value": 5416.030103376628
+    },
+    {
+      "date": "2014-08-29",
+      "return": -1.133996568083201,
+      "value": 5354.612507877984
+    },
+    {
+      "date": "2014-09-26",
+      "return": -5.1930444484891565,
+      "value": 5076.5451002995205
+    },
+    {
+      "date": "2014-10-31",
+      "return": -2.4496760549067345,
+      "value": 4952.186190560942
+    },
+    {
+      "date": "2014-11-28",
+      "return": 1.5514999898501196,
+      "value": 5029.019358804854
+    },
+    {
+      "date": "2014-12-26",
+      "return": -2.3447407854080184,
+      "value": 4911.101890792892
+    },
+    {
+      "date": "2015-01-30",
+      "return": -5.487703367840104,
+      "value": 4641.595186933791
+    },
+    {
+      "date": "2015-02-27",
+      "return": 2.974811655558533,
+      "value": 4779.673901558542
+    },
+    {
+      "date": "2015-03-27",
+      "return": -3.986904869038948,
+      "value": 4589.11285005312
+    },
+    {
+      "date": "2015-04-24",
+      "return": 5.303597346614549,
+      "value": 4832.500917401685
+    },
+    {
+      "date": "2015-05-29",
+      "return": -1.1740519950611485,
+      "value": 4775.764843969582
+    },
+    {
+      "date": "2015-06-26",
+      "return": 1.633689890662702,
+      "value": 4853.786031427337
+    },
+    {
+      "date": "2015-07-31",
+      "return": 0.746020122036512,
+      "value": 4889.996251902382
+    },
+    {
+      "date": "2015-08-28",
+      "return": -4.898191652265202,
+      "value": 4650.474863695618
+    },
+    {
+      "date": "2015-09-25",
+      "return": -2.18889960432228,
+      "value": 4548.680637805078
+    },
+    {
+      "date": "2015-10-30",
+      "return": 5.8624053168619215,
+      "value": 4815.3427333628315
+    },
+    {
+      "date": "2015-11-27",
+      "return": 1.1541044105627323,
+      "value": 4870.916816232284
+    },
+    {
+      "date": "2015-12-25",
+      "return": -0.2663795328556773,
+      "value": 4857.941690771416
+    },
+    {
+      "date": "2016-01-29",
+      "return": -9.531181463555654,
+      "value": 4394.922452830268
+    },
+    {
+      "date": "2016-02-26",
+      "return": -5.9683812136594065,
+      "value": 4132.6167268006475
+    },
+    {
+      "date": "2016-03-25",
+      "return": 2.8177552266094503,
+      "value": 4249.063750615809
+    },
+    {
+      "date": "2016-04-29",
+      "return": -3.9599513909225283,
+      "value": 4080.8028915221134
+    },
+    {
+      "date": "2016-05-27",
+      "return": 0.13730932946783664,
+      "value": 4086.4062146093665
+    },
+    {
+      "date": "2016-06-24",
+      "return": -4.664397453544665,
+      "value": 3895.7999871936363
+    },
+    {
+      "date": "2016-07-29",
+      "return": 7.375660647478706,
+      "value": 4183.140973753558
+    },
+    {
+      "date": "2016-08-26",
+      "return": -2.0454788176726666,
+      "value": 4097.575711222043
+    },
+    {
+      "date": "2016-09-30",
+      "return": -1.1859313896133015,
+      "value": 4048.98127464949
+    },
+    {
+      "date": "2016-10-28",
+      "return": -2.0483319173021295,
+      "value": 3966.044698875258
+    },
+    {
+      "date": "2016-11-25",
+      "return": 12.75825924987785,
+      "value": 4472.042963523801
+    },
+    {
+      "date": "2016-12-30",
+      "return": 5.896469239487529,
+      "value": 4735.735601244648
+    },
+    {
+      "date": "2017-01-27",
+      "return": 1.4207799845374378,
+      "value": 4803.019984787746
+    },
+    {
+      "date": "2017-02-24",
+      "return": 0.0010380267289704804,
+      "value": 4803.069841418986
+    },
+    {
+      "date": "2017-03-31",
+      "return": -0.06923208245024871,
+      "value": 4799.744576146231
+    },
+    {
+      "date": "2017-04-28",
+      "return": -1.3895292188331347,
+      "value": 4733.050722831321
+    },
+    {
+      "date": "2017-05-26",
+      "return": 2.1536135168708843,
+      "value": 4834.982342958571
+    },
+    {
+      "date": "2017-06-30",
+      "return": -1.6134558478180805,
+      "value": 4756.972037605135
+    },
+    {
+      "date": "2017-07-28",
+      "return": 1.5400713457471518,
+      "value": 4830.232800881496
+    },
+    {
+      "date": "2017-08-25",
+      "return": -3.2084417420826044,
+      "value": 4675.257595458248
+    },
+    {
+      "date": "2017-09-29",
+      "return": 0.06839012445442236,
+      "value": 4678.455009946347
+    },
+    {
+      "date": "2017-10-27",
+      "return": 1.7748014942183765,
+      "value": 4761.488299369209
+    },
+    {
+      "date": "2017-11-24",
+      "return": 0.5190881282951472,
+      "value": 4786.204619861397
+    },
+    {
+      "date": "2017-12-29",
+      "return": -1.854915806707527,
+      "value": 4697.424553826222
+    },
+    {
+      "date": "2018-01-26",
+      "return": 6.62966745342463,
+      "value": 5008.848180620416
+    },
+    {
+      "date": "2018-02-23",
+      "return": -5.245392595311163,
+      "value": 4746.114429043775
+    },
+    {
+      "date": "2018-03-30",
+      "return": -7.4614185253016885,
+      "value": 4391.986967803086
+    },
+    {
+      "date": "2018-04-27",
+      "return": 0.14384783620751557,
+      "value": 4398.304746022787
+    },
+    {
+      "date": "2018-05-25",
+      "return": 1.8594769458966935,
+      "value": 4480.090208785361
+    },
+    {
+      "date": "2018-06-29",
+      "return": 0.5182751316829387,
+      "value": 4503.309402214458
+    },
+    {
+      "date": "2018-07-27",
+      "return": -0.8862156289236329,
+      "value": 4463.400370473246
+    },
+    {
+      "date": "2018-08-31",
+      "return": 2.7436083078052698,
+      "value": 4585.858593848161
+    },
+    {
+      "date": "2018-09-28",
+      "return": -0.6084474251748637,
+      "value": 4557.956055311732
+    },
+    {
+      "date": "2018-10-26",
+      "return": -11.03817298668892,
+      "value": 4054.8409812691602
+    },
+    {
+      "date": "2018-11-30",
+      "return": 4.984279533319624,
+      "value": 4256.945590407216
+    },
+    {
+      "date": "2018-12-28",
+      "return": -10.36789602955396,
+      "value": 3815.5898975591135
+    },
+    {
+      "date": "2019-01-25",
+      "return": -2.2423566477375845,
+      "value": 3730.030763840793
+    },
+    {
+      "date": "2019-02-22",
+      "return": 1.677921083101482,
+      "value": 3792.617736433449
+    },
+    {
+      "date": "2019-03-29",
+      "return": -4.471943561825984,
+      "value": 3623.014011744343
+    },
+    {
+      "date": "2019-04-26",
+      "return": 0.14912094110507673,
+      "value": 3628.416684335025
+    },
+    {
+      "date": "2019-05-31",
+      "return": -7.435869676200513,
+      "value": 3358.6123483783567
+    },
+    {
+      "date": "2019-06-28",
+      "return": 2.060444768219523,
+      "value": 3427.8147007952934
+    },
+    {
+      "date": "2019-07-26",
+      "return": 3.037930370890106,
+      "value": 3531.9493246485895
+    },
+    {
+      "date": "2019-08-30",
+      "return": -6.785898825275654,
+      "value": 3292.2748169179295
+    },
+    {
+      "date": "2019-09-27",
+      "return": -3.7422622847524853,
+      "value": 3169.069258134006
+    },
+    {
+      "date": "2019-10-25",
+      "return": 3.6458033564813634,
+      "value": 3284.6072915162745
+    },
+    {
+      "date": "2019-11-29",
+      "return": 3.552746457152981,
+      "value": 3401.3010606970074
+    },
+    {
+      "date": "2019-12-27",
+      "return": 3.9804656317153233,
+      "value": 3536.6886804492206
+    },
+    {
+      "date": "2020-01-31",
+      "return": 1.5701990313746024,
+      "value": 3592.2217318523694
+    },
+    {
+      "date": "2020-02-28",
+      "return": -5.300180919937118,
+      "value": 3401.8274810188955
+    },
+    {
+      "date": "2020-03-27",
+      "return": -9.719100914582764,
+      "value": 3071.20043519866
+    },
+    {
+      "date": "2020-04-24",
+      "return": 15.616576669389204,
+      "value": 3550.816805832074
+    },
+    {
+      "date": "2020-05-29",
+      "return": 2.953281471537541,
+      "value": 3655.6824206469537
+    },
+    {
+      "date": "2020-06-26",
+      "return": 2.1227240015938245,
+      "value": 3733.2824688120727
+    },
+    {
+      "date": "2020-07-31",
+      "return": 12.732701032219657,
+      "value": 4208.630164254183
+    },
+    {
+      "date": "2020-08-28",
+      "return": 12.439147984378,
+      "value": 4732.147898500932
+    },
+    {
+      "date": "2020-09-25",
+      "return": -8.686153637704013,
+      "value": 4321.106261673759
+    },
+    {
+      "date": "2020-10-30",
+      "return": -5.896813691332626,
+      "value": 4066.2986760183494
+    },
+    {
+      "date": "2020-11-27",
+      "return": 14.656017469217138,
+      "value": 4662.256120326144
+    },
+    {
+      "date": "2020-12-25",
+      "return": -0.188832566581683,
+      "value": 4653.45226243352
+    },
+    {
+      "date": "2021-01-29",
+      "return": -3.766768911869753,
+      "value": 4478.167469283475
+    },
+    {
+      "date": "2021-02-26",
+      "return": 11.903344846052399,
+      "value": 5011.219185936025
+    },
+    {
+      "date": "2021-03-26",
+      "return": 1.298570602587483,
+      "value": 5076.293405115814
+    },
+    {
+      "date": "2021-04-30",
+      "return": -2.4089593678271615,
+      "value": 4954.007559594884
+    },
+    {
+      "date": "2021-05-28",
+      "return": 2.236586335910589,
+      "value": 5064.808215752761
+    },
+    {
+      "date": "2021-06-25",
+      "return": -0.9035973445014327,
+      "value": 5019.042743211128
+    },
+    {
+      "date": "2021-07-30",
+      "return": -0.30163123380078954,
+      "value": 5003.9037426597915
+    },
+    {
+      "date": "2021-08-27",
+      "return": 3.054559187286619,
+      "value": 5156.750944154185
+    },
+    {
+      "date": "2021-09-24",
+      "return": -4.763211869342202,
+      "value": 4911.123971109817
+    },
+    {
+      "date": "2021-10-29",
+      "return": 5.209672410544102,
+      "value": 5166.977441680343
+    },
+    {
+      "date": "2021-11-26",
+      "return": 1.9137771738463778,
+      "value": 5265.861876537013
+    },
+    {
+      "date": "2021-12-31",
+      "return": -4.230466598359967,
+      "value": 5043.091348734343
+    },
+    {
+      "date": "2022-01-28",
+      "return": -1.5266221264675381,
+      "value": 4966.102400346595
+    },
+    {
+      "date": "2022-02-25",
+      "return": -2.6864366897740632,
+      "value": 4832.691203411933
+    },
+    {
+      "date": "2022-03-25",
+      "return": 8.525552026914092,
+      "value": 5244.704806258918
+    },
+    {
+      "date": "2022-04-29",
+      "return": -10.015279356832735,
+      "value": 4719.432968470855
+    },
+    {
+      "date": "2022-05-27",
+      "return": 7.336380191095003,
+      "value": 5065.668513901757
+    },
+    {
+      "date": "2022-06-24",
+      "return": -10.062056305017677,
+      "value": 4555.95809580741
+    },
+    {
+      "date": "2022-07-29",
+      "return": -3.394620931421937,
+      "value": 4401.30058866032
+    },
+    {
+      "date": "2022-08-26",
+      "return": -3.733172850074102,
+      "value": 4236.992430034301
+    },
+    {
+      "date": "2022-09-30",
+      "return": -12.433665943986885,
+      "value": 3710.1789452118237
+    },
+    {
+      "date": "2022-10-28",
+      "return": 1.2859770200028784,
+      "value": 3757.890993848233
+    },
+    {
+      "date": "2022-11-25",
+      "return": -0.891738397845974,
+      "value": 3724.3804369068926
+    },
+    {
+      "date": "2022-12-30",
+      "return": -6.077984380029282,
+      "value": 3498.0131756988253
+    },
+    {
+      "date": "2023-01-27",
+      "return": 4.439517101178548,
+      "value": 3653.3080688354535
+    },
+    {
+      "date": "2023-02-24",
+      "return": -6.992883096913614,
+      "value": 3397.836506411678
+    },
+    {
+      "date": "2023-03-31",
+      "return": 7.399353747865376,
+      "value": 3649.2544492951884
+    },
+    {
+      "date": "2023-04-28",
+      "return": -2.5280808722437564,
+      "value": 3556.9983455830525
+    },
+    {
+      "date": "2023-05-26",
+      "return": 11.9064150029022,
+      "value": 3980.509330254536
+    },
+    {
+      "date": "2023-06-30",
+      "return": -0.5448452877586418,
+      "value": 3958.821712739851
+    },
+    {
+      "date": "2023-07-28",
+      "return": 0.37362073361286313,
+      "value": 3973.612691465415
+    },
+    {
+      "date": "2023-08-25",
+      "return": -6.949869428627127,
+      "value": 3697.4517978092126
+    },
+    {
+      "date": "2023-09-29",
+      "return": -6.162771249918477,
+      "value": 3469.5863014342326
+    },
+    {
+      "date": "2023-10-27",
+      "return": -8.707916180553628,
+      "value": 3167.457634493369
+    },
+    {
+      "date": "2023-11-24",
+      "return": 3.7804891587404845,
+      "value": 3287.2030269730885
+    },
+    {
+      "date": "2023-12-29",
+      "return": -1.171147545183595,
+      "value": 3248.7050294174924
+    },
+    {
+      "date": "2024-01-26",
+      "return": 1.3345778657333605,
+      "value": 3292.0615276630647
+    },
+    {
+      "date": "2024-02-23",
+      "return": 4.492696966130203,
+      "value": 3439.963876039523
+    },
+    {
+      "date": "2024-03-29",
+      "return": 4.362271320049314,
+      "value": 3590.0244336240517
+    },
+    {
+      "date": "2024-04-26",
+      "return": -7.4918992296718265,
+      "value": 3321.063420736341
+    },
+    {
+      "date": "2024-05-31",
+      "return": -0.8269664913003716,
+      "value": 3293.5993390920175
+    },
+    {
+      "date": "2024-06-28",
+      "return": -1.829811443788793,
+      "value": 3233.3326814727598
+    },
+    {
+      "date": "2024-07-26",
+      "return": -3.069916261273184,
+      "value": 3134.0720757031672
+    },
+    {
+      "date": "2024-08-30",
+      "return": -1.705578298441125,
+      "value": 3080.6180225224707
+    },
+    {
+      "date": "2024-09-27",
+      "return": 1.1093966560101964,
+      "value": 3114.7942958487824
+    },
+    {
+      "date": "2024-10-25",
+      "return": -5.0276456884022345,
+      "value": 2958.1934747309424
+    },
+    {
+      "date": "2024-11-29",
+      "return": 1.3235278668654786,
+      "value": 2997.3459897248026
+    },
+    {
+      "date": "2024-12-27",
+      "return": -2.80056237334325,
+      "value": 2913.403445737657
+    },
+    {
+      "date": "2025-01-31",
+      "return": 1.0866369106894795,
+      "value": 2945.0615629363415
+    },
+    {
+      "date": "2025-02-28",
+      "return": -7.483645227375324,
+      "value": 2724.663603838391
+    },
+    {
+      "date": "2025-03-28",
+      "return": -9.423423496853188,
+      "value": 2467.907013584077
+    },
+    {
+      "date": "2025-04-25",
+      "return": -12.425363085223337,
+      "value": 2161.2606065405635
+    },
+    {
+      "date": "2025-05-30",
+      "return": -1.0290497554271405,
+      "value": 2139.0201595548147
+    },
+    {
+      "date": "2025-06-27",
+      "return": 1.8091677485204842,
+      "value": 2177.7186224158318
+    },
+    {
+      "date": "2025-07-25",
+      "return": 2.426677936207953,
+      "value": 2230.5648397386885
+    },
+    {
+      "date": "2025-08-29",
+      "return": -3.900378328706009,
+      "value": 2143.564372121785
+    },
+    {
+      "date": "2025-09-26",
+      "return": 7.304084677768988,
+      "value": 2300.132128984047
+    },
+    {
+      "date": "2025-10-31",
+      "return": 8.578593194329539,
+      "value": 2497.4511072616597
+    }
+  ],
+  "rebalance_dates": [
+    "2010-01-01",
+    "2010-01-08",
+    "2010-01-15",
+    "2010-01-22",
+    "2010-01-29",
+    "2010-02-05",
+    "2010-02-12",
+    "2010-02-19",
+    "2010-02-26",
+    "2010-03-05",
+    "2010-03-12",
+    "2010-03-19",
+    "2010-03-26",
+    "2010-04-02",
+    "2010-04-09",
+    "2010-04-16",
+    "2010-04-23",
+    "2010-04-30",
+    "2010-05-07",
+    "2010-05-14",
+    "2010-05-21",
+    "2010-05-28",
+    "2010-06-04",
+    "2010-06-11",
+    "2010-06-18",
+    "2010-06-25",
+    "2010-07-02",
+    "2010-07-09",
+    "2010-07-16",
+    "2010-07-23",
+    "2010-07-30",
+    "2010-08-06",
+    "2010-08-13",
+    "2010-08-20",
+    "2010-08-27",
+    "2010-09-03",
+    "2010-09-10",
+    "2010-09-17",
+    "2010-09-24",
+    "2010-10-01",
+    "2010-10-08",
+    "2010-10-15",
+    "2010-10-22",
+    "2010-10-29",
+    "2010-11-05",
+    "2010-11-12",
+    "2010-11-19",
+    "2010-11-26",
+    "2010-12-03",
+    "2010-12-10",
+    "2010-12-17",
+    "2010-12-24",
+    "2010-12-31",
+    "2011-01-07",
+    "2011-01-14",
+    "2011-01-21",
+    "2011-01-28",
+    "2011-02-04",
+    "2011-02-11",
+    "2011-02-18",
+    "2011-02-25",
+    "2011-03-04",
+    "2011-03-11",
+    "2011-03-18",
+    "2011-03-25",
+    "2011-04-01",
+    "2011-04-08",
+    "2011-04-15",
+    "2011-04-22",
+    "2011-04-29",
+    "2011-05-06",
+    "2011-05-13",
+    "2011-05-20",
+    "2011-05-27",
+    "2011-06-03",
+    "2011-06-10",
+    "2011-06-17",
+    "2011-06-24",
+    "2011-07-01",
+    "2011-07-08",
+    "2011-07-15",
+    "2011-07-22",
+    "2011-07-29",
+    "2011-08-05",
+    "2011-08-12",
+    "2011-08-19",
+    "2011-08-26",
+    "2011-09-02",
+    "2011-09-09",
+    "2011-09-16",
+    "2011-09-23",
+    "2011-09-30",
+    "2011-10-07",
+    "2011-10-14",
+    "2011-10-21",
+    "2011-10-28",
+    "2011-11-04",
+    "2011-11-11",
+    "2011-11-18",
+    "2011-11-25",
+    "2011-12-02",
+    "2011-12-09",
+    "2011-12-16",
+    "2011-12-23",
+    "2011-12-30",
+    "2012-01-06",
+    "2012-01-13",
+    "2012-01-20",
+    "2012-01-27",
+    "2012-02-03",
+    "2012-02-10",
+    "2012-02-17",
+    "2012-02-24",
+    "2012-03-02",
+    "2012-03-09",
+    "2012-03-16",
+    "2012-03-23",
+    "2012-03-30",
+    "2012-04-06",
+    "2012-04-13",
+    "2012-04-20",
+    "2012-04-27",
+    "2012-05-04",
+    "2012-05-11",
+    "2012-05-18",
+    "2012-05-25",
+    "2012-06-01",
+    "2012-06-08",
+    "2012-06-15",
+    "2012-06-22",
+    "2012-06-29",
+    "2012-07-06",
+    "2012-07-13",
+    "2012-07-20",
+    "2012-07-27",
+    "2012-08-03",
+    "2012-08-10",
+    "2012-08-17",
+    "2012-08-24",
+    "2012-08-31",
+    "2012-09-07",
+    "2012-09-14",
+    "2012-09-21",
+    "2012-09-28",
+    "2012-10-05",
+    "2012-10-12",
+    "2012-10-19",
+    "2012-10-26",
+    "2012-11-02",
+    "2012-11-09",
+    "2012-11-16",
+    "2012-11-23",
+    "2012-11-30",
+    "2012-12-07",
+    "2012-12-14",
+    "2012-12-21",
+    "2012-12-28",
+    "2013-01-04",
+    "2013-01-11",
+    "2013-01-18",
+    "2013-01-25",
+    "2013-02-01",
+    "2013-02-08",
+    "2013-02-15",
+    "2013-02-22",
+    "2013-03-01",
+    "2013-03-08",
+    "2013-03-15",
+    "2013-03-22",
+    "2013-03-29",
+    "2013-04-05",
+    "2013-04-12",
+    "2013-04-19",
+    "2013-04-26",
+    "2013-05-03",
+    "2013-05-10",
+    "2013-05-17",
+    "2013-05-24",
+    "2013-05-31",
+    "2013-06-07",
+    "2013-06-14",
+    "2013-06-21",
+    "2013-06-28",
+    "2013-07-05",
+    "2013-07-12",
+    "2013-07-19",
+    "2013-07-26",
+    "2013-08-02",
+    "2013-08-09",
+    "2013-08-16",
+    "2013-08-23",
+    "2013-08-30",
+    "2013-09-06",
+    "2013-09-13",
+    "2013-09-20",
+    "2013-09-27",
+    "2013-10-04",
+    "2013-10-11",
+    "2013-10-18",
+    "2013-10-25",
+    "2013-11-01",
+    "2013-11-08",
+    "2013-11-15",
+    "2013-11-22",
+    "2013-11-29",
+    "2013-12-06",
+    "2013-12-13",
+    "2013-12-20",
+    "2013-12-27",
+    "2014-01-03",
+    "2014-01-10",
+    "2014-01-17",
+    "2014-01-24",
+    "2014-01-31",
+    "2014-02-07",
+    "2014-02-14",
+    "2014-02-21",
+    "2014-02-28",
+    "2014-03-07",
+    "2014-03-14",
+    "2014-03-21",
+    "2014-03-28",
+    "2014-04-04",
+    "2014-04-11",
+    "2014-04-18",
+    "2014-04-25",
+    "2014-05-02",
+    "2014-05-09",
+    "2014-05-16",
+    "2014-05-23",
+    "2014-05-30",
+    "2014-06-06",
+    "2014-06-13",
+    "2014-06-20",
+    "2014-06-27",
+    "2014-07-04",
+    "2014-07-11",
+    "2014-07-18",
+    "2014-07-25",
+    "2014-08-01",
+    "2014-08-08",
+    "2014-08-15",
+    "2014-08-22",
+    "2014-08-29",
+    "2014-09-05",
+    "2014-09-12",
+    "2014-09-19",
+    "2014-09-26",
+    "2014-10-03",
+    "2014-10-10",
+    "2014-10-17",
+    "2014-10-24",
+    "2014-10-31",
+    "2014-11-07",
+    "2014-11-14",
+    "2014-11-21",
+    "2014-11-28",
+    "2014-12-05",
+    "2014-12-12",
+    "2014-12-19",
+    "2014-12-26",
+    "2015-01-02",
+    "2015-01-09",
+    "2015-01-16",
+    "2015-01-23",
+    "2015-01-30",
+    "2015-02-06",
+    "2015-02-13",
+    "2015-02-20",
+    "2015-02-27",
+    "2015-03-06",
+    "2015-03-13",
+    "2015-03-20",
+    "2015-03-27",
+    "2015-04-03",
+    "2015-04-10",
+    "2015-04-17",
+    "2015-04-24",
+    "2015-05-01",
+    "2015-05-08",
+    "2015-05-15",
+    "2015-05-22",
+    "2015-05-29",
+    "2015-06-05",
+    "2015-06-12",
+    "2015-06-19",
+    "2015-06-26",
+    "2015-07-03",
+    "2015-07-10",
+    "2015-07-17",
+    "2015-07-24",
+    "2015-07-31",
+    "2015-08-07",
+    "2015-08-14",
+    "2015-08-21",
+    "2015-08-28",
+    "2015-09-04",
+    "2015-09-11",
+    "2015-09-18",
+    "2015-09-25",
+    "2015-10-02",
+    "2015-10-09",
+    "2015-10-16",
+    "2015-10-23",
+    "2015-10-30",
+    "2015-11-06",
+    "2015-11-13",
+    "2015-11-20",
+    "2015-11-27",
+    "2015-12-04",
+    "2015-12-11",
+    "2015-12-18",
+    "2015-12-25",
+    "2016-01-01",
+    "2016-01-08",
+    "2016-01-15",
+    "2016-01-22",
+    "2016-01-29",
+    "2016-02-05",
+    "2016-02-12",
+    "2016-02-19",
+    "2016-02-26",
+    "2016-03-04",
+    "2016-03-11",
+    "2016-03-18",
+    "2016-03-25",
+    "2016-04-01",
+    "2016-04-08",
+    "2016-04-15",
+    "2016-04-22",
+    "2016-04-29",
+    "2016-05-06",
+    "2016-05-13",
+    "2016-05-20",
+    "2016-05-27",
+    "2016-06-03",
+    "2016-06-10",
+    "2016-06-17",
+    "2016-06-24",
+    "2016-07-01",
+    "2016-07-08",
+    "2016-07-15",
+    "2016-07-22",
+    "2016-07-29",
+    "2016-08-05",
+    "2016-08-12",
+    "2016-08-19",
+    "2016-08-26",
+    "2016-09-02",
+    "2016-09-09",
+    "2016-09-16",
+    "2016-09-23",
+    "2016-09-30",
+    "2016-10-07",
+    "2016-10-14",
+    "2016-10-21",
+    "2016-10-28",
+    "2016-11-04",
+    "2016-11-11",
+    "2016-11-18",
+    "2016-11-25",
+    "2016-12-02",
+    "2016-12-09",
+    "2016-12-16",
+    "2016-12-23",
+    "2016-12-30",
+    "2017-01-06",
+    "2017-01-13",
+    "2017-01-20",
+    "2017-01-27",
+    "2017-02-03",
+    "2017-02-10",
+    "2017-02-17",
+    "2017-02-24",
+    "2017-03-03",
+    "2017-03-10",
+    "2017-03-17",
+    "2017-03-24",
+    "2017-03-31",
+    "2017-04-07",
+    "2017-04-14",
+    "2017-04-21",
+    "2017-04-28",
+    "2017-05-05",
+    "2017-05-12",
+    "2017-05-19",
+    "2017-05-26",
+    "2017-06-02",
+    "2017-06-09",
+    "2017-06-16",
+    "2017-06-23",
+    "2017-06-30",
+    "2017-07-07",
+    "2017-07-14",
+    "2017-07-21",
+    "2017-07-28",
+    "2017-08-04",
+    "2017-08-11",
+    "2017-08-18",
+    "2017-08-25",
+    "2017-09-01",
+    "2017-09-08",
+    "2017-09-15",
+    "2017-09-22",
+    "2017-09-29",
+    "2017-10-06",
+    "2017-10-13",
+    "2017-10-20",
+    "2017-10-27",
+    "2017-11-03",
+    "2017-11-10",
+    "2017-11-17",
+    "2017-11-24",
+    "2017-12-01",
+    "2017-12-08",
+    "2017-12-15",
+    "2017-12-22",
+    "2017-12-29",
+    "2018-01-05",
+    "2018-01-12",
+    "2018-01-19",
+    "2018-01-26",
+    "2018-02-02",
+    "2018-02-09",
+    "2018-02-16",
+    "2018-02-23",
+    "2018-03-02",
+    "2018-03-09",
+    "2018-03-16",
+    "2018-03-23",
+    "2018-03-30",
+    "2018-04-06",
+    "2018-04-13",
+    "2018-04-20",
+    "2018-04-27",
+    "2018-05-04",
+    "2018-05-11",
+    "2018-05-18",
+    "2018-05-25",
+    "2018-06-01",
+    "2018-06-08",
+    "2018-06-15",
+    "2018-06-22",
+    "2018-06-29",
+    "2018-07-06",
+    "2018-07-13",
+    "2018-07-20",
+    "2018-07-27",
+    "2018-08-03",
+    "2018-08-10",
+    "2018-08-17",
+    "2018-08-24",
+    "2018-08-31",
+    "2018-09-07",
+    "2018-09-14",
+    "2018-09-21",
+    "2018-09-28",
+    "2018-10-05",
+    "2018-10-12",
+    "2018-10-19",
+    "2018-10-26",
+    "2018-11-02",
+    "2018-11-09",
+    "2018-11-16",
+    "2018-11-23",
+    "2018-11-30",
+    "2018-12-07",
+    "2018-12-14",
+    "2018-12-21",
+    "2018-12-28",
+    "2019-01-04",
+    "2019-01-11",
+    "2019-01-18",
+    "2019-01-25",
+    "2019-02-01",
+    "2019-02-08",
+    "2019-02-15",
+    "2019-02-22",
+    "2019-03-01",
+    "2019-03-08",
+    "2019-03-15",
+    "2019-03-22",
+    "2019-03-29",
+    "2019-04-05",
+    "2019-04-12",
+    "2019-04-19",
+    "2019-04-26",
+    "2019-05-03",
+    "2019-05-10",
+    "2019-05-17",
+    "2019-05-24",
+    "2019-05-31",
+    "2019-06-07",
+    "2019-06-14",
+    "2019-06-21",
+    "2019-06-28",
+    "2019-07-05",
+    "2019-07-12",
+    "2019-07-19",
+    "2019-07-26",
+    "2019-08-02",
+    "2019-08-09",
+    "2019-08-16",
+    "2019-08-23",
+    "2019-08-30",
+    "2019-09-06",
+    "2019-09-13",
+    "2019-09-20",
+    "2019-09-27",
+    "2019-10-04",
+    "2019-10-11",
+    "2019-10-18",
+    "2019-10-25",
+    "2019-11-01",
+    "2019-11-08",
+    "2019-11-15",
+    "2019-11-22",
+    "2019-11-29",
+    "2019-12-06",
+    "2019-12-13",
+    "2019-12-20",
+    "2019-12-27",
+    "2020-01-03",
+    "2020-01-10",
+    "2020-01-17",
+    "2020-01-24",
+    "2020-01-31",
+    "2020-02-07",
+    "2020-02-14",
+    "2020-02-21",
+    "2020-02-28",
+    "2020-03-06",
+    "2020-03-13",
+    "2020-03-20",
+    "2020-03-27",
+    "2020-04-03",
+    "2020-04-10",
+    "2020-04-17",
+    "2020-04-24",
+    "2020-05-01",
+    "2020-05-08",
+    "2020-05-15",
+    "2020-05-22",
+    "2020-05-29",
+    "2020-06-05",
+    "2020-06-12",
+    "2020-06-19",
+    "2020-06-26",
+    "2020-07-03",
+    "2020-07-10",
+    "2020-07-17",
+    "2020-07-24",
+    "2020-07-31",
+    "2020-08-07",
+    "2020-08-14",
+    "2020-08-21",
+    "2020-08-28",
+    "2020-09-04",
+    "2020-09-11",
+    "2020-09-18",
+    "2020-09-25",
+    "2020-10-02",
+    "2020-10-09",
+    "2020-10-16",
+    "2020-10-23",
+    "2020-10-30",
+    "2020-11-06",
+    "2020-11-13",
+    "2020-11-20",
+    "2020-11-27",
+    "2020-12-04",
+    "2020-12-11",
+    "2020-12-18",
+    "2020-12-25",
+    "2021-01-01",
+    "2021-01-08",
+    "2021-01-15",
+    "2021-01-22",
+    "2021-01-29",
+    "2021-02-05",
+    "2021-02-12",
+    "2021-02-19",
+    "2021-02-26",
+    "2021-03-05",
+    "2021-03-12",
+    "2021-03-19",
+    "2021-03-26",
+    "2021-04-02",
+    "2021-04-09",
+    "2021-04-16",
+    "2021-04-23",
+    "2021-04-30",
+    "2021-05-07",
+    "2021-05-14",
+    "2021-05-21",
+    "2021-05-28",
+    "2021-06-04",
+    "2021-06-11",
+    "2021-06-18",
+    "2021-06-25",
+    "2021-07-02",
+    "2021-07-09",
+    "2021-07-16",
+    "2021-07-23",
+    "2021-07-30",
+    "2021-08-06",
+    "2021-08-13",
+    "2021-08-20",
+    "2021-08-27",
+    "2021-09-03",
+    "2021-09-10",
+    "2021-09-17",
+    "2021-09-24",
+    "2021-10-01",
+    "2021-10-08",
+    "2021-10-15",
+    "2021-10-22",
+    "2021-10-29",
+    "2021-11-05",
+    "2021-11-12",
+    "2021-11-19",
+    "2021-11-26",
+    "2021-12-03",
+    "2021-12-10",
+    "2021-12-17",
+    "2021-12-24",
+    "2021-12-31",
+    "2022-01-07",
+    "2022-01-14",
+    "2022-01-21",
+    "2022-01-28",
+    "2022-02-04",
+    "2022-02-11",
+    "2022-02-18",
+    "2022-02-25",
+    "2022-03-04",
+    "2022-03-11",
+    "2022-03-18",
+    "2022-03-25",
+    "2022-04-01",
+    "2022-04-08",
+    "2022-04-15",
+    "2022-04-22",
+    "2022-04-29",
+    "2022-05-06",
+    "2022-05-13",
+    "2022-05-20",
+    "2022-05-27",
+    "2022-06-03",
+    "2022-06-10",
+    "2022-06-17",
+    "2022-06-24",
+    "2022-07-01",
+    "2022-07-08",
+    "2022-07-15",
+    "2022-07-22",
+    "2022-07-29",
+    "2022-08-05",
+    "2022-08-12",
+    "2022-08-19",
+    "2022-08-26",
+    "2022-09-02",
+    "2022-09-09",
+    "2022-09-16",
+    "2022-09-23",
+    "2022-09-30",
+    "2022-10-07",
+    "2022-10-14",
+    "2022-10-21",
+    "2022-10-28",
+    "2022-11-04",
+    "2022-11-11",
+    "2022-11-18",
+    "2022-11-25",
+    "2022-12-02",
+    "2022-12-09",
+    "2022-12-16",
+    "2022-12-23",
+    "2022-12-30",
+    "2023-01-06",
+    "2023-01-13",
+    "2023-01-20",
+    "2023-01-27",
+    "2023-02-03",
+    "2023-02-10",
+    "2023-02-17",
+    "2023-02-24",
+    "2023-03-03",
+    "2023-03-10",
+    "2023-03-17",
+    "2023-03-24",
+    "2023-03-31",
+    "2023-04-07",
+    "2023-04-14",
+    "2023-04-21",
+    "2023-04-28",
+    "2023-05-05",
+    "2023-05-12",
+    "2023-05-19",
+    "2023-05-26",
+    "2023-06-02",
+    "2023-06-09",
+    "2023-06-16",
+    "2023-06-23",
+    "2023-06-30",
+    "2023-07-07",
+    "2023-07-14",
+    "2023-07-21",
+    "2023-07-28",
+    "2023-08-04",
+    "2023-08-11",
+    "2023-08-18",
+    "2023-08-25",
+    "2023-09-01",
+    "2023-09-08",
+    "2023-09-15",
+    "2023-09-22",
+    "2023-09-29",
+    "2023-10-06",
+    "2023-10-13",
+    "2023-10-20",
+    "2023-10-27",
+    "2023-11-03",
+    "2023-11-10",
+    "2023-11-17",
+    "2023-11-24",
+    "2023-12-01",
+    "2023-12-08",
+    "2023-12-15",
+    "2023-12-22",
+    "2023-12-29",
+    "2024-01-05",
+    "2024-01-12",
+    "2024-01-19",
+    "2024-01-26",
+    "2024-02-02",
+    "2024-02-09",
+    "2024-02-16",
+    "2024-02-23",
+    "2024-03-01",
+    "2024-03-08",
+    "2024-03-15",
+    "2024-03-22",
+    "2024-03-29",
+    "2024-04-05",
+    "2024-04-12",
+    "2024-04-19",
+    "2024-04-26",
+    "2024-05-03",
+    "2024-05-10",
+    "2024-05-17",
+    "2024-05-24",
+    "2024-05-31",
+    "2024-06-07",
+    "2024-06-14",
+    "2024-06-21",
+    "2024-06-28",
+    "2024-07-05",
+    "2024-07-12",
+    "2024-07-19",
+    "2024-07-26",
+    "2024-08-02",
+    "2024-08-09",
+    "2024-08-16",
+    "2024-08-23",
+    "2024-08-30",
+    "2024-09-06",
+    "2024-09-13",
+    "2024-09-20",
+    "2024-09-27",
+    "2024-10-04",
+    "2024-10-11",
+    "2024-10-18",
+    "2024-10-25",
+    "2024-11-01",
+    "2024-11-08",
+    "2024-11-15",
+    "2024-11-22",
+    "2024-11-29",
+    "2024-12-06",
+    "2024-12-13",
+    "2024-12-20",
+    "2024-12-27",
+    "2025-01-03",
+    "2025-01-10",
+    "2025-01-17",
+    "2025-01-24",
+    "2025-01-31",
+    "2025-02-07",
+    "2025-02-14",
+    "2025-02-21",
+    "2025-02-28",
+    "2025-03-07",
+    "2025-03-14",
+    "2025-03-21",
+    "2025-03-28",
+    "2025-04-04",
+    "2025-04-11",
+    "2025-04-18",
+    "2025-04-25",
+    "2025-05-02",
+    "2025-05-09",
+    "2025-05-16",
+    "2025-05-23",
+    "2025-05-30",
+    "2025-06-06",
+    "2025-06-13",
+    "2025-06-20",
+    "2025-06-27",
+    "2025-07-04",
+    "2025-07-11",
+    "2025-07-18",
+    "2025-07-25",
+    "2025-08-01",
+    "2025-08-08",
+    "2025-08-15",
+    "2025-08-22",
+    "2025-08-29",
+    "2025-09-05",
+    "2025-09-12",
+    "2025-09-19",
+    "2025-09-26",
+    "2025-10-03",
+    "2025-10-10",
+    "2025-10-17",
+    "2025-10-24",
+    "2025-10-31"
+  ],
+  "parameters": {
+    "rebalance_frequency": "weekly",
+    "lookback_months": 3,
+    "top_n": 10,
+    "transaction_fee": 0.002,
+    "slippage": 0.001
+  }
+}

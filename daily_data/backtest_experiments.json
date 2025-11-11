@@ -1,0 +1,156 @@
+{
+  "c8f3a361e9f1b607": {
+    "id": "c8f3a361e9f1b607",
+    "label": "대형주 - 5종목 - daily",
+    "params": {
+      "num_stocks": 5,
+      "rebalance_frequency": "daily",
+      "weight_method": "momentum",
+      "enable_market_filter": true,
+      "initial_capital": 10000,
+      "weeks": 12
+    },
+    "result": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-06",
+      "initial_capital": 10000,
+      "final_value": 9228.595781942964,
+      "total_return": -7.714042180570359,
+      "annualized_return": -99.7149634484425,
+      "mdd": -11.375267648015633,
+      "sharpe_ratio": -3.7662924659358548,
+      "win_rate": 20.0,
+      "num_rebalances": 5,
+      "best_day": {
+        "date": "2025-11-04",
+        "return": 8.72180135649756,
+        "value": 9635.440546045207
+      },
+      "worst_day": {
+        "date": "2025-11-02",
+        "return": -5.859290234253938,
+        "value": 9414.070976574607
+      },
+      "cash_holding_days": 0,
+      "cash_holding_ratio": 0.0,
+      "portfolio_history": [
+        10000,
+        10000,
+        9414.070976574607,
+        8862.473235198437,
+        9635.440546045207,
+        9228.595781942964
+      ],
+      "daily_returns": [
+        {
+          "date": "2025-11-01",
+          "return": 0,
+          "value": 10000
+        },
+        {
+          "date": "2025-11-02",
+          "return": -5.859290234253938,
+          "value": 9414.070976574607
+        },
+        {
+          "date": "2025-11-03",
+          "return": -5.859290234253938,
+          "value": 8862.473235198437
+        },
+        {
+          "date": "2025-11-04",
+          "return": 8.72180135649756,
+          "value": 9635.440546045207
+        },
+        {
+          "date": "2025-11-05",
+          "return": -4.222378438827369,
+          "value": 9228.595781942964
+        }
+      ],
+      "params": {
+        "weeks": 12,
+        "initial_capital": 10000,
+        "num_stocks": 5,
+        "rebalance_frequency": "daily",
+        "weight_method": "momentum",
+        "enable_market_filter": true,
+        "start_date": null,
+        "end_date": null
+      }
+    },
+    "timestamp": "2025-11-07 00:39:18",
+    "favorite": false
+  },
+  "22d7879ca80921b5": {
+    "id": "22d7879ca80921b5",
+    "label": "대형주 - 5종목 - daily",
+    "params": {
+      "num_stocks": 5,
+      "rebalance_frequency": "daily",
+      "weight_method": "equal",
+      "enable_market_filter": true,
+      "initial_capital": 10000,
+      "weeks": 32
+    },
+    "result": {
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-07",
+      "initial_capital": 10000,
+      "final_value": 8851.13656666195,
+      "total_return": -11.488634333380505,
+      "annualized_return": -99.94032738999208,
+      "mdd": -11.488634333380505,
+      "sharpe_ratio": -18.420241795145493,
+      "win_rate": 0.0,
+      "num_rebalances": 6,
+      "best_day": {
+        "date": "2025-11-01",
+        "return": 0,
+        "value": 10000
+      },
+      "worst_day": {
+        "date": "2025-11-02",
+        "return": -5.919520799147982,
+        "value": 9408.047920085202
+      },
+      "cash_holding_days": 0,
+      "cash_holding_ratio": 0.0,
+      "portfolio_history": [
+        10000,
+        10000,
+        9408.047920085202,
+        8851.13656666195
+      ],
+      "daily_returns": [
+        {
+          "date": "2025-11-01",
+          "return": 0,
+          "value": 10000
+        },
+        {
+          "date": "2025-11-02",
+          "return": -5.919520799147982,
+          "value": 9408.047920085202
+        },
+        {
+          "date": "2025-11-03",
+          "return": -5.919520799147982,
+          "value": 8851.13656666195
+        }
+      ],
+      "params": {
+        "weeks": 32,
+        "initial_capital": 10000,
+        "num_stocks": 5,
+        "rebalance_frequency": "daily",
+        "weight_method": "equal",
+        "enable_market_filter": true,
+        "start_date": null,
+        "end_date": null
+      }
+    },
+    "timestamp": "2025-11-07 13:57:23",
+    "favorite": false
+  }
+}

@@ -20,6 +20,7 @@
 - 🚨 **손절 신호**: MA60 이탈 시 자동 경고
 - 🔴 **트레일링 스탑**: 3개월 최고가 대비 10-15% 하락 시 매도 신호
 - 💰 **백테스팅**: 매일 리밸런싱 전략의 성과 시뮬레이션
+- ✅ **현실적 백테스팅 (NEW!)**: Look-Ahead Bias 제거 + 거래비용 반영
 - 🌐 **웹 대시보드**: Streamlit 기반 인터랙티브 시각화 대시보드
 
 ## 📦 설치
@@ -123,7 +124,42 @@ streamlit run src/dashboard/app.py
 
 자세한 사용법은 [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md)를 참고하세요.
 
-### 5. Windows 작업 스케줄러 설정 (권장)
+### 5. 현실적인 백테스팅 비교 실행 (NEW!)
+
+**개선된 백테스팅의 특징:**
+- ✅ **Look-Ahead Bias 제거**: 미래 정보 사용 방지
+- 💰 **거래 비용 반영**: 수수료 0.2% + 슬리피지 0.1%
+- 📊 **현실적인 결과**: 실제 투자에 가까운 시뮬레이션
+
+```bash
+# 기존 vs 개선된 백테스팅 비교
+python compare_backtests.py
+```
+
+이 명령어를 실행하면:
+1. 기존 방식 (Look-Ahead Bias 있음) 백테스팅
+2. 개선 방식 (Look-Ahead Bias 제거 + 거래비용) 백테스팅
+3. 두 결과를 비교하여 Telegram으로 전송
+
+**예상 결과:**
+- 개선 버전의 수익률이 20-50% 정도 낮게 나옴
+- 이것이 **실제 투자 시 예상되는 현실적인 수익률**입니다!
+
+**개선된 백테스팅만 단독 실행:**
+```python
+from src.realistic_backtest import run_realistic_backtest
+
+result = run_realistic_backtest(
+    screener_type="large",
+    initial_capital=10000,
+    test_period_months=3,
+    lookback_months=3,
+    lag_months=1,
+    rebalance_frequency='monthly'
+)
+```
+
+### 6. Windows 작업 스케줄러 설정 (권장)
 
 1. Windows 작업 스케줄러 열기
 2. "기본 작업 만들기" 선택
@@ -137,6 +173,7 @@ streamlit run src/dashboard/app.py
 Mo/
 ├── main.py                    # 메인 실행 파일
 ├── scheduler.py               # 스케줄러
+├── compare_backtests.py       # 백테스팅 비교 스크립트 (NEW!)
 ├── test_telegram.py          # Telegram 연결 테스트
 ├── test_slack.py             # Slack 연결 테스트 (레거시)
 ├── config.py                 # 설정 파일
@@ -149,6 +186,8 @@ Mo/
 │   ├── analyzer.py           # 데이터 분석
 │   ├── technical_analyzer.py # 기술적 분석 (이동평균선)
 │   ├── backtester.py         # 백테스팅 시뮬레이션
+│   ├── historical_backtest.py # 3개월 역산 백테스팅
+│   ├── realistic_backtest.py # 현실적 백테스팅 (NEW!)
 │   ├── telegram_notifier.py  # Telegram 알림
 │   ├── slack_notifier.py     # Slack 알림 (레거시)
 │   ├── email_notifier.py     # 이메일 알림
@@ -163,6 +202,7 @@ Mo/
 │   ├── finviz_data_large_2025-10-27.csv  # 대형주 데이터
 │   ├── finviz_data_mega_2025-10-27.csv   # 초대형주 데이터
 │   ├── backtest_cache.json   # 백테스팅 결과 캐시
+│   ├── backtest_comparison.json # 백테스팅 비교 결과 (NEW!)
 │   └── logs/                 # 로그 파일
 └── archive/                  # 아카이브 폴더
 ```

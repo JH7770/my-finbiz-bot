@@ -98,51 +98,60 @@ def check_market_regime(vix_threshold=20, use_cache=True):
     
     # SPY (S&P 500) 데이터 가져오기
     spy_data = get_market_data('^GSPC', days=250)
-    if spy_data is None:
-        logger.error("SPY 데이터를 가져올 수 없습니다.")
-        return None
+    spy_price = None
+    spy_ma200 = None
+    spy_ma120 = None
+    
+    if spy_data is not None:
+        spy_price = spy_data['Close'].iloc[-1]
+        spy_ma200 = calculate_moving_average(spy_data, 200)
+        spy_ma120 = calculate_moving_average(spy_data, 120)
+    else:
+        logger.warning("SPY 데이터를 가져올 수 없습니다. 기본값 사용")
     
     # VIX 데이터 가져오기
     vix_data = get_market_data('^VIX', days=30)
-    if vix_data is None:
-        logger.error("VIX 데이터를 가져올 수 없습니다.")
-        return None
+    vix = None
     
-    # 현재 가격
-    spy_price = spy_data['Close'].iloc[-1]
-    vix = vix_data['Close'].iloc[-1]
+    if vix_data is not None:
+        vix = vix_data['Close'].iloc[-1]
+    else:
+        logger.warning("VIX 데이터를 가져올 수 없습니다. 기본값 사용")
     
-    # 이동평균 계산
-    spy_ma200 = calculate_moving_average(spy_data, 200)
-    spy_ma120 = calculate_moving_average(spy_data, 120)
-    
-    if spy_ma200 is None or spy_ma120 is None:
-        logger.error("이동평균 계산 실패")
+    # 데이터가 하나도 없으면 None 반환
+    if spy_price is None and vix is None:
+        logger.error("SPY와 VIX 데이터를 모두 가져올 수 없습니다.")
         return None
     
     # 약세장 판단
     hold_cash = False
     reason = ""
     
-    if spy_price < spy_ma200:
-        hold_cash = True
-        reason = "SPY < MA200 (약세장)"
-        logger.warning(f"⚠️ 약세장 감지: {reason}")
-    elif spy_price < spy_ma120 and vix > vix_threshold:
-        hold_cash = True
-        reason = f"SPY < MA120 AND VIX > {vix_threshold} (변동성 과열)"
-        logger.warning(f"⚠️ 약세장 감지: {reason}")
+    # SPY와 MA200/MA120 데이터가 모두 있는 경우
+    if spy_price is not None and spy_ma200 is not None:
+        if spy_price < spy_ma200:
+            hold_cash = True
+            reason = "SPY < MA200 (약세장)"
+            logger.warning(f"⚠️ 약세장 감지: {reason}")
+        elif spy_ma120 is not None and spy_price < spy_ma120 and vix is not None and vix > vix_threshold:
+            hold_cash = True
+            reason = f"SPY < MA120 AND VIX > {vix_threshold} (변동성 과열)"
+            logger.warning(f"⚠️ 약세장 감지: {reason}")
+        else:
+            reason = "정상 (강세장)"
+            logger.info(f"✅ 강세장: {reason}")
     else:
-        reason = "정상 (강세장)"
-        logger.info(f"✅ 강세장: {reason}")
+        # 데이터가 부족한 경우 보수적으로 정상으로 판단
+        reason = "데이터 부족 (정상으로 가정)"
+        logger.warning(f"⚠️ {reason}")
     
-    # 결과 생성
+    # 결과 생성 (None 값은 0으로 처리)
     result = {
         'hold_cash': hold_cash,
-        'spy_price': float(spy_price),
-        'spy_ma200': float(spy_ma200),
-        'spy_ma120': float(spy_ma120),
-        'vix': float(vix),
+        'spy_price': float(spy_price) if spy_price is not None else 0.0,
+        'spy_ma200': float(spy_ma200) if spy_ma200 is not None else 0.0,
+        'spy_ma120': float(spy_ma120) if spy_ma120 is not None else 0.0,
+        'vix': float(vix) if vix is not None else 0.0,
         'vix_threshold': vix_threshold,
         'date': today,
         'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

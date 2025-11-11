@@ -92,18 +92,42 @@ def get_price_data(tickers, start_date, end_date):
     
     return price_data
 
-def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
+def simulate_portfolio_flexible(historical_data, params=None):
     """
-    포트폴리오 백테스팅 시뮬레이션 (매일 리밸런싱)
+    파라미터화된 포트폴리오 백테스팅 시뮬레이션
     
     Args:
         historical_data: load_historical_portfolio_data()의 결과
-        weeks: 백테스팅 기간 (주)
-        initial_capital: 초기 자본금
+        params: 백테스팅 파라미터 딕셔너리
+            - weeks: 백테스팅 기간 (주)
+            - initial_capital: 초기 자본금
+            - num_stocks: 포트폴리오 종목 수 (5, 10, 15)
+            - rebalance_frequency: 'daily' 또는 'weekly'
+            - weight_method: 'equal', 'market_cap', 'momentum'
+            - enable_market_filter: True/False
+            - start_date: 시작 날짜 (옵션, YYYY-MM-DD)
+            - end_date: 종료 날짜 (옵션, YYYY-MM-DD)
     
     Returns:
-        백테스팅 결과 딕셔너리
+        백테스팅 결과 딕셔너리 (portfolio_history, daily_returns 포함)
     """
+    # 기본 파라미터
+    default_params = {
+        'weeks': 4,
+        'initial_capital': 10000,
+        'num_stocks': 5,
+        'rebalance_frequency': 'daily',
+        'weight_method': 'equal',
+        'enable_market_filter': ENABLE_MARKET_FILTER,
+        'start_date': None,
+        'end_date': None
+    }
+    
+    if params:
+        default_params.update(params)
+    
+    params = default_params
+    
     if not historical_data:
         logger.warning("역사적 데이터가 없습니다.")
         return None
@@ -116,28 +140,39 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
         return None
     
     # 기간 설정
-    end_date = datetime.strptime(dates[-1], '%Y-%m-%d')
-    start_date = end_date - timedelta(weeks=weeks)
+    if params['end_date']:
+        end_date = datetime.strptime(params['end_date'], '%Y-%m-%d')
+    else:
+        end_date = datetime.strptime(dates[-1], '%Y-%m-%d')
     
-    # 리밸런싱 날짜 (매일 - 실제 데이터가 있는 날만)
-    rebalance_dates = get_daily_rebalance_dates(start_date, end_date, dates)
+    if params['start_date']:
+        start_date = datetime.strptime(params['start_date'], '%Y-%m-%d')
+    else:
+        start_date = end_date - timedelta(weeks=params['weeks'])
+    
+    # 리밸런싱 날짜 생성
+    if params['rebalance_frequency'] == 'daily':
+        rebalance_dates = get_daily_rebalance_dates(start_date, end_date, dates)
+    else:  # weekly
+        rebalance_dates = get_weekly_rebalance_dates(start_date, end_date, dates)
     
     if len(rebalance_dates) < 2:
         logger.warning("백테스팅을 위한 충분한 리밸런싱 날짜가 없습니다.")
         return None
     
     logger.info(f"백테스팅 기간: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
-    logger.info(f"리밸런싱 날짜 수: {len(rebalance_dates)}일")
+    logger.info(f"리밸런싱 주기: {params['rebalance_frequency']}, 날짜 수: {len(rebalance_dates)}일")
+    logger.info(f"종목 수: {params['num_stocks']}, 비중 방식: {params['weight_method']}")
     
     # 시장 필터 활성화 여부
-    if ENABLE_MARKET_FILTER:
+    if params['enable_market_filter']:
         logger.info("시장 필터 활성화 - 약세장 시 현금 보유")
     
     # 포트폴리오 시뮬레이션
-    portfolio_value = initial_capital
+    portfolio_value = params['initial_capital']
     portfolio_history = []
     daily_returns = []
-    cash_holding_days = 0  # 현금 보유 일수
+    cash_holding_days = 0
     
     for i in range(len(rebalance_dates) - 1):
         rebalance_date = rebalance_dates[i]
@@ -145,7 +180,7 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
         
         # 시장 필터 체크
         hold_cash = False
-        if ENABLE_MARKET_FILTER:
+        if params['enable_market_filter']:
             from market_filter import get_historical_market_regime
             market_regime = get_historical_market_regime(rebalance_date, VIX_THRESHOLD)
             if market_regime and market_regime.get('hold_cash', False):
@@ -153,7 +188,7 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
                 cash_holding_days += 1
                 logger.debug(f"{rebalance_date}: 약세장 - 현금 보유 ({market_regime.get('reason', '')})")
         
-        # 약세장일 때는 현금 보유 (포트폴리오 가치 동결)
+        # 약세장일 때는 현금 보유
         if hold_cash:
             portfolio_history.append(portfolio_value)
             daily_returns.append({
@@ -163,52 +198,42 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
             })
             continue
         
-        # 해당 날짜의 상위 10개 종목
+        # 해당 날짜의 종목 데이터
         if rebalance_date not in historical_data:
             logger.warning(f"{rebalance_date}: 데이터 없음, 스킵")
             continue
         
-        top10 = historical_data[rebalance_date]
-        tickers = top10['Ticker'].tolist()
+        df = historical_data[rebalance_date]
+        top_stocks = df.head(params['num_stocks'])
+        tickers = top_stocks['Ticker'].tolist()
         
         logger.debug(f"{rebalance_date} 리밸런싱: {', '.join(tickers[:3])}...")
         
-        # 각 종목에 동일 비중 할당 (10% each)
-        allocation_per_stock = portfolio_value / 10
+        # 비중 계산
+        weights = calculate_weights(top_stocks, params['weight_method'])
         
         # 다음 날까지의 수익률 계산
         try:
-            # yfinance로 가격 데이터 가져오기 (여유있게 +2일)
-            from datetime import datetime as dt
-            next_date = dt.strptime(next_rebalance_date, '%Y-%m-%d')
+            next_date = datetime.strptime(next_rebalance_date, '%Y-%m-%d')
             extended_end = (next_date + timedelta(days=2)).strftime('%Y-%m-%d')
             
-            price_data = get_price_data(
-                tickers,
-                start_date=rebalance_date,
-                end_date=extended_end
-            )
+            price_data = get_price_data(tickers, start_date=rebalance_date, end_date=extended_end)
             
             if not price_data:
                 logger.warning(f"{rebalance_date}: 가격 데이터 없음")
                 continue
             
-            # 각 종목의 수익률 계산 (당일 종가 -> 다음날 종가)
+            # 각 종목의 수익률 계산
             day_return = 0
-            successful_stocks = 0
-            for ticker in tickers:
+            for idx, ticker in enumerate(tickers):
                 if ticker not in price_data or len(price_data[ticker]) < 2:
-                    logger.debug(f"{ticker}: 충분한 가격 데이터 없음")
                     continue
                 
-                # 당일 종가 (매수가)
                 buy_price = price_data[ticker].iloc[0]
-                # 다음날 종가 (매도가) - 실제 데이터에서 다음 거래일
                 sell_price = price_data[ticker].iloc[1] if len(price_data[ticker]) > 1 else price_data[ticker].iloc[0]
                 
                 stock_return = (sell_price - buy_price) / buy_price if buy_price != 0 else 0
-                day_return += stock_return * 0.1  # 10% 비중
-                successful_stocks += 1
+                day_return += stock_return * weights[idx]
             
             # 포트폴리오 가치 업데이트
             new_value = portfolio_value * (1 + day_return)
@@ -236,7 +261,7 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
     
     # 성과 지표 계산
     result = calculate_performance_metrics(
-        initial_capital=initial_capital,
+        initial_capital=params['initial_capital'],
         final_value=portfolio_value,
         portfolio_history=portfolio_history,
         daily_returns=daily_returns,
@@ -246,7 +271,129 @@ def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
         cash_holding_days=cash_holding_days
     )
     
+    # 상세 데이터 추가
+    result['portfolio_history'] = portfolio_history
+    result['daily_returns'] = daily_returns
+    result['params'] = params
+    
     return result
+
+
+def calculate_weights(df, weight_method='equal'):
+    """
+    종목 비중 계산
+    
+    Args:
+        df: 종목 데이터프레임
+        weight_method: 'equal', 'market_cap', 'momentum'
+    
+    Returns:
+        list: 비중 리스트 (합계 1.0)
+    """
+    num_stocks = len(df)
+    
+    if weight_method == 'equal':
+        # 동일 비중
+        return [1.0 / num_stocks] * num_stocks
+    
+    elif weight_method == 'market_cap':
+        # 시가총액 가중 (Market Cap 컬럼 사용)
+        if 'Market Cap' not in df.columns:
+            logger.warning("Market Cap 컬럼이 없습니다. 동일 비중 사용")
+            return [1.0 / num_stocks] * num_stocks
+        
+        # Market Cap 파싱 (예: 125.5B -> 125.5e9)
+        market_caps = []
+        for cap_str in df['Market Cap']:
+            try:
+                cap_str = str(cap_str).strip()
+                if cap_str.endswith('B'):
+                    cap = float(cap_str[:-1]) * 1e9
+                elif cap_str.endswith('M'):
+                    cap = float(cap_str[:-1]) * 1e6
+                else:
+                    cap = float(cap_str)
+                market_caps.append(cap)
+            except:
+                market_caps.append(1.0)
+        
+        total_cap = sum(market_caps)
+        if total_cap == 0:
+            return [1.0 / num_stocks] * num_stocks
+        
+        weights = [cap / total_cap for cap in market_caps]
+        return weights
+    
+    elif weight_method == 'momentum':
+        # 모멘텀 가중 (Perf Quart 컬럼 사용)
+        if 'Perf Quart' not in df.columns:
+            logger.warning("Perf Quart 컬럼이 없습니다. 동일 비중 사용")
+            return [1.0 / num_stocks] * num_stocks
+        
+        # 성과 파싱
+        perfs = []
+        for perf_str in df['Perf Quart']:
+            try:
+                perf = float(str(perf_str).replace('%', '').strip())
+                # 음수 성과는 0으로 처리
+                perfs.append(max(0, perf))
+            except:
+                perfs.append(0)
+        
+        total_perf = sum(perfs)
+        if total_perf == 0:
+            return [1.0 / num_stocks] * num_stocks
+        
+        weights = [perf / total_perf for perf in perfs]
+        return weights
+    
+    else:
+        return [1.0 / num_stocks] * num_stocks
+
+
+def get_weekly_rebalance_dates(start_date, end_date, available_dates):
+    """주간 리밸런싱 날짜 생성 (매주 첫 거래일)"""
+    dates = []
+    available_dt = [datetime.strptime(d, '%Y-%m-%d') for d in available_dates]
+    
+    current = start_date
+    while current <= end_date:
+        # 해당 주의 첫 거래일 찾기
+        week_start = current
+        week_end = current + timedelta(days=7)
+        
+        # 해당 주에 사용 가능한 날짜 찾기
+        week_dates = [d for d in available_dt if week_start <= d < week_end]
+        if week_dates:
+            dates.append(week_dates[0].strftime('%Y-%m-%d'))
+        
+        current = week_end
+    
+    return dates
+
+
+def simulate_portfolio(historical_data, weeks=4, initial_capital=10000):
+    """
+    포트폴리오 백테스팅 시뮬레이션 (매일 리밸런싱)
+    레거시 호환성을 위한 래퍼 함수
+    
+    Args:
+        historical_data: load_historical_portfolio_data()의 결과
+        weeks: 백테스팅 기간 (주)
+        initial_capital: 초기 자본금
+    
+    Returns:
+        백테스팅 결과 딕셔너리
+    """
+    params = {
+        'weeks': weeks,
+        'initial_capital': initial_capital,
+        'num_stocks': 5,
+        'rebalance_frequency': 'daily',
+        'weight_method': 'equal',
+        'enable_market_filter': ENABLE_MARKET_FILTER
+    }
+    return simulate_portfolio_flexible(historical_data, params)
 
 def calculate_performance_metrics(initial_capital, final_value, portfolio_history, 
                                   daily_returns, start_date, end_date, num_rebalances,

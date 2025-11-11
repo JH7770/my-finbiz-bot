@@ -2,7 +2,7 @@
 import os
 
 # Slack 웹훅 URL (실제 URL로 변경 필요)
-SLACK_WEBHOOK_URL = os.getenv('SLACK_WEBHOOK_URL', 'SLACK_WEBHOOK_URL')
+SLACK_WEBHOOK_URL = os.getenv('SLACK_WEBHOOK_URL', '')
 
 # 데이터 저장 디렉토리
 DATA_DIR = "daily_data"
@@ -37,8 +37,8 @@ EMAIL_TO = os.getenv('EMAIL_TO', '')
 DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL', '')
 
 # Telegram 설정
-TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', 'TELEGRAM_BOT_TOKEN')
-TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID', 'TELEGRAM_CHAT_ID')
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID', '')
 ENABLE_TELEGRAM_NOTIFICATIONS = os.getenv('ENABLE_TELEGRAM_NOTIFICATIONS', 'True').lower() == 'true'
 
 # 백테스팅 설정

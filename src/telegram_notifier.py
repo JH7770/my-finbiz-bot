@@ -5,7 +5,7 @@ from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 from analyzer import calculate_summary_stats
 
 def create_telegram_message(current_df, yesterday_analysis, week_analysis, technical_analysis=None, screener_name="대형주", ma60_breaks=None, trailing_stops=None, breakout_highs=None, market_regime=None):
-    """Telegram 메시지 생성 - Markdown 형식 사용
+    """Telegram 메시지 생성 - 투자 전략 중심의 간결한 형식
     
     Args:
         current_df: 현재 데이터 DataFrame
@@ -58,17 +58,22 @@ def create_telegram_message(current_df, yesterday_analysis, week_analysis, techn
     # 현재 상위 5개 종목 (포트폴리오)
     message += "🏆 *포트폴리오 상위 5개 종목*\n\n"
     
-    # 순위 변화 정보 가져오기
-    rank_changes = {}
-    if yesterday_analysis and 'rank_changes' in yesterday_analysis:
-        rank_changes = {change['ticker']: change for change in yesterday_analysis['rank_changes']}
-    
     # 트레일링 스탑 종목 리스트
     trailing_stop_tickers = [s['ticker'] for s in trailing_stops] if trailing_stops else []
     # MA60 이탈 종목 리스트
     ma60_break_tickers = [b['ticker'] for b in ma60_breaks] if ma60_breaks else []
     # 신고가 돌파 종목 리스트
     breakout_tickers = [b['ticker'] for b in breakout_highs] if breakout_highs else []
+    
+    # 순위 변화 계산
+    rank_changes_dict = {}
+    if yesterday_analysis and 'rank_changes' in yesterday_analysis:
+        # 리스트를 딕셔너리로 변환
+        rank_changes_list = yesterday_analysis['rank_changes']
+        if isinstance(rank_changes_list, list):
+            rank_changes_dict = {item['ticker']: item for item in rank_changes_list}
+        else:
+            rank_changes_dict = rank_changes_list
     
     # 상위 5개만 표시
     top5 = current_top10.head(5)
@@ -80,8 +85,8 @@ def create_telegram_message(current_df, yesterday_analysis, week_analysis, techn
         
         # 순위 변화 표시
         rank_indicator = ""
-        if ticker in rank_changes:
-            change = rank_changes[ticker]['change']
+        if ticker in rank_changes_dict:
+            change = rank_changes_dict[ticker]['change']
             if change > 0:
                 rank_indicator = f" ↑{change}"
             elif change < 0:
@@ -458,3 +463,194 @@ def send_historical_backtest_result(result, bot_token=None, chat_id=None):
     message = create_historical_backtest_message(result)
     return send_to_telegram(message, bot_token, chat_id)
 
+
+# ===== 백테스팅 리포트 전송 함수 (GUI용) =====
+
+def send_backtest_report(backtest_result, label="백테스팅 결과", bot_token=None, chat_id=None):
+    """
+    백테스팅 결과 요약 리포트 전송
+    
+    Args:
+        backtest_result: 백테스팅 결과 딕셔너리
+        label: 리포트 라벨
+        bot_token: Telegram Bot Token (None이면 config에서 가져옴)
+        chat_id: Telegram Chat ID (None이면 config에서 가져옴)
+    
+    Returns:
+        전송 성공 여부 (bool)
+    """
+    if not backtest_result:
+        return False
+    
+    # 메시지 생성
+    message = f"📊 *{label}*\n"
+    message += f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 백테스팅 기간
+    message += "📆 *백테스팅 기간*\n"
+    message += f"• 시작일: {backtest_result.get('start_date', '-')}\n"
+    message += f"• 종료일: {backtest_result.get('end_date', '-')}\n"
+    message += f"• 거래일수: {backtest_result.get('num_rebalances', 0)}일\n\n"
+    
+    # 파라미터 정보
+    if 'params' in backtest_result:
+        params = backtest_result['params']
+        message += "⚙️ *전략 파라미터*\n"
+        message += f"• 종목 수: {params.get('num_stocks', '-')}\n"
+        message += f"• 리밸런싱: {params.get('rebalance_frequency', '-')}\n"
+        message += f"• 비중 방식: {params.get('weight_method', '-')}\n"
+        message += f"• 시장 필터: {'활성화' if params.get('enable_market_filter') else '비활성화'}\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 성과 지표
+    message += "💰 *성과 지표*\n"
+    message += f"• 초기 자본: ${backtest_result.get('initial_capital', 0):,.0f}\n"
+    message += f"• 최종 가치: ${backtest_result.get('final_value', 0):,.0f}\n"
+    message += f"• 손익: ${backtest_result.get('final_value', 0) - backtest_result.get('initial_capital', 0):,.0f}\n\n"
+    
+    message += f"• 총 수익률: {backtest_result.get('total_return', 0):.2f}%\n"
+    message += f"• 연환산 수익률: {backtest_result.get('annualized_return', 0):.2f}%\n"
+    message += f"• 최대낙폭 (MDD): {backtest_result.get('mdd', 0):.2f}%\n"
+    message += f"• 샤프비율: {backtest_result.get('sharpe_ratio', 0):.2f}\n"
+    message += f"• 승률: {backtest_result.get('win_rate', 0):.2f}%\n\n"
+    
+    # 최고/최악의 거래일
+    best_day = backtest_result.get('best_day', {})
+    worst_day = backtest_result.get('worst_day', {})
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    message += "📈 *최고/최악 거래일*\n"
+    message += f"• 최고: {best_day.get('date', '-')} ({best_day.get('return', 0):.2f}%)\n"
+    message += f"• 최악: {worst_day.get('date', '-')} ({worst_day.get('return', 0):.2f}%)\n\n"
+    
+    # 시장 필터 정보
+    cash_holding_days = backtest_result.get('cash_holding_days', 0)
+    if cash_holding_days > 0:
+        message += f"🏦 시장 필터로 {cash_holding_days}일 동안 현금 보유\n"
+        message += f"   (전체의 {backtest_result.get('cash_holding_ratio', 0):.1f}%)\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n"
+    
+    return send_to_telegram(message, bot_token, chat_id)
+
+
+def send_backtest_chart(fig, caption="백테스팅 차트", bot_token=None, chat_id=None):
+    """
+    Plotly 차트를 PNG로 변환하여 전송
+    
+    Args:
+        fig: Plotly Figure 객체
+        caption: 차트 캡션
+        bot_token: Telegram Bot Token (None이면 config에서 가져옴)
+        chat_id: Telegram Chat ID (None이면 config에서 가져옴)
+    
+    Returns:
+        전송 성공 여부 (bool)
+    """
+    if not fig:
+        return False
+    
+    try:
+        import io
+        
+        # Plotly 차트를 이미지로 변환
+        img_bytes = fig.to_image(format="png", width=1200, height=600)
+        
+        # Telegram API 엔드포인트
+        if bot_token is None:
+            bot_token = TELEGRAM_BOT_TOKEN
+        if chat_id is None:
+            chat_id = TELEGRAM_CHAT_ID
+        
+        url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
+        
+        # 파일 전송
+        files = {
+            'photo': ('chart.png', img_bytes, 'image/png')
+        }
+        data = {
+            'chat_id': chat_id,
+            'caption': caption,
+            'parse_mode': 'Markdown'
+        }
+        
+        response = requests.post(url, files=files, data=data)
+        
+        if response.status_code == 200:
+            print(f"[텔레그램] 차트 전송 성공: {caption}")
+            return True
+        else:
+            print(f"[텔레그램] 차트 전송 실패: {response.status_code} - {response.text}")
+            return False
+    
+    except Exception as e:
+        print(f"[텔레그램] 차트 전송 에러: {e}")
+        return False
+
+
+def send_strategy_comparison_report(strategies, bot_token=None, chat_id=None):
+    """
+    전략 비교 리포트 전송
+    
+    Args:
+        strategies: 전략 결과 리스트
+        bot_token: Telegram Bot Token (None이면 config에서 가져옴)
+        chat_id: Telegram Chat ID (None이면 config에서 가져옴)
+    
+    Returns:
+        전송 성공 여부 (bool)
+    """
+    if not strategies:
+        return False
+    
+    # 메시지 생성
+    message = f"🔬 *전략 비교 분석*\n"
+    message += f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+    message += f"📊 총 {len(strategies)}개 전략 비교\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 각 전략 요약
+    for idx, strategy in enumerate(strategies, 1):
+        result = strategy['result']
+        label = strategy.get('label', f"전략 {idx}")
+        params = strategy.get('params', {})
+        
+        message += f"*{idx}. {label}*\n"
+        message += f"• 종목 수: {params.get('num_stocks', '-')}\n"
+        message += f"• 리밸런싱: {params.get('rebalance_frequency', '-')}\n"
+        message += f"• 비중: {params.get('weight_method', '-')}\n"
+        message += f"• 수익률: {result['total_return']:.2f}%\n"
+        message += f"• 샤프비율: {result['sharpe_ratio']:.2f}\n"
+        message += f"• MDD: {result['mdd']:.2f}%\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n\n"
+    
+    # 최적 전략 추천
+    best_sharpe = max(strategies, key=lambda x: x['result']['sharpe_ratio'])
+    best_return = max(strategies, key=lambda x: x['result']['total_return'])
+    best_mdd = min(strategies, key=lambda x: abs(x['result']['mdd']))
+    
+    message += "🏆 *최적 전략*\n\n"
+    
+    message += f"*샤프비율 최고*\n"
+    message += f"• {best_sharpe.get('label', '전략')}\n"
+    message += f"• 샤프비율: {best_sharpe['result']['sharpe_ratio']:.2f}\n"
+    message += f"• 수익률: {best_sharpe['result']['total_return']:.2f}%\n\n"
+    
+    message += f"*총 수익률 최고*\n"
+    message += f"• {best_return.get('label', '전략')}\n"
+    message += f"• 수익률: {best_return['result']['total_return']:.2f}%\n"
+    message += f"• 샤프비율: {best_return['result']['sharpe_ratio']:.2f}\n\n"
+    
+    message += f"*MDD 최소*\n"
+    message += f"• {best_mdd.get('label', '전략')}\n"
+    message += f"• MDD: {best_mdd['result']['mdd']:.2f}%\n"
+    message += f"• 수익률: {best_mdd['result']['total_return']:.2f}%\n\n"
+    
+    message += "━━━━━━━━━━━━━━━━━━━━\n"
+    
+    return send_to_telegram(message, bot_token, chat_id)
