@@ -1,7 +1,14 @@
 # 기술적 분석 모듈 - 이동평균선 분석
-import yfinance as yf
-import pandas as pd
+import copy
+import json
+import os
 from datetime import datetime, timedelta
+from typing import Any, Dict, Optional
+
+import pandas as pd
+import yfinance as yf
+
+from config import DATA_DIR
 from logger import get_logger
 
 logger = get_logger()
@@ -219,7 +226,13 @@ def calculate_ma_status(ticker):
         logger.error(f"{ticker}: 이동평균 계산 실패 - {e}")
         return result
 
-def analyze_top10_technical(df):
+def analyze_top10_technical(
+    df,
+    as_of_date: Optional[str] = None,
+    screener_type: Optional[str] = None,
+    output_dir: Optional[str] = None,
+    return_snapshot: bool = False,
+):
     """
     상위 5개 종목의 기술적 분석을 일괄 처리
     
@@ -233,15 +246,15 @@ def analyze_top10_technical(df):
     technical_analysis = {}
     
     logger.info("=== 상위 5개 종목 기술적 분석 시작 ===")
-    
+
     for i, row in top10.iterrows():
         ticker = row['Ticker']
         logger.info(f"분석 중: {ticker} ({i+1}/5)")
-        
+
         # 각 종목의 이동평균선 분석
         ma_status = calculate_ma_status(ticker)
         technical_analysis[ticker] = ma_status
-    
+
     logger.info("=== 기술적 분석 완료 ===")
     
     # 요약 통계
@@ -249,7 +262,29 @@ def analyze_top10_technical(df):
     all_conditions_count = sum(1 for v in technical_analysis.values() if v.get('all_conditions_met', False))
     
     logger.info(f"분석 성공: {success_count}/10, 모든 조건 만족: {all_conditions_count}/10")
-    
+
+    snapshot = None
+    if as_of_date and screener_type:
+        snapshot = {
+            'version': 1,
+            'generated_at': datetime.utcnow().isoformat() + 'Z',
+            'as_of': as_of_date,
+            'screener': screener_type,
+            'results': copy.deepcopy(technical_analysis),
+            'tickers': list(technical_analysis.keys()),
+            'result_count': len(technical_analysis),
+        }
+
+        target_dir = output_dir or os.path.join(DATA_DIR, 'technical')
+        try:
+            snapshot_path = save_technical_snapshot(snapshot, target_dir)
+            logger.info(f"기술적 분석 스냅샷 저장 완료: {snapshot_path}")
+        except Exception as exc:
+            logger.error(f"기술적 분석 스냅샷 저장 실패: {exc}", exc_info=True)
+
+    if return_snapshot:
+        return technical_analysis, snapshot
+
     return technical_analysis
 
 def get_technical_icon(ma_status):
@@ -279,6 +314,61 @@ def get_technical_icon(ma_status):
         return '⚠️'  # 부분 만족
     
     return '❌'  # 조건 미달
+
+
+def save_technical_snapshot(snapshot: Dict[str, Any], output_dir: str) -> str:
+    """기술적 분석 결과를 JSON 스냅샷으로 저장합니다."""
+
+    if 'screener' not in snapshot or 'as_of' not in snapshot:
+        raise ValueError('snapshot에는 screener와 as_of가 포함되어야 합니다.')
+
+    os.makedirs(output_dir, exist_ok=True)
+    filename = f"{snapshot['screener']}_{snapshot['as_of']}.json"
+    path = os.path.join(output_dir, filename)
+
+    with open(path, 'w', encoding='utf-8') as fp:
+        json.dump(snapshot, fp, ensure_ascii=False, indent=2)
+
+    return path
+
+
+def load_technical_snapshot(
+    screener_type: str,
+    date_str: str,
+    base_dir: Optional[str] = None,
+) -> Optional[Dict[str, Any]]:
+    """저장된 기술적 분석 스냅샷을 로드합니다."""
+
+    if not screener_type or not date_str:
+        return None
+
+    directory = base_dir or os.path.join(DATA_DIR, 'technical')
+    filename = f"{screener_type}_{date_str}.json"
+    path = os.path.join(directory, filename)
+
+    if not os.path.exists(path):
+        logger.debug(f"기술적 분석 스냅샷을 찾을 수 없습니다: {path}")
+        return None
+
+    try:
+        with open(path, 'r', encoding='utf-8') as fp:
+            return json.load(fp)
+    except Exception as exc:
+        logger.error(f"기술적 분석 스냅샷 로드 실패 ({path}): {exc}", exc_info=True)
+        return None
+
+
+def _extract_results(snapshot_or_results: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """스냅샷 또는 결과 딕셔너리에서 결과 부분만 추출합니다."""
+
+    if not snapshot_or_results:
+        return {}
+
+    if isinstance(snapshot_or_results, dict):
+        results = snapshot_or_results.get('results')
+        if isinstance(results, dict):
+            return results
+    return snapshot_or_results if isinstance(snapshot_or_results, dict) else {}
 
 def format_technical_detail(ticker, ma_status):
     """
@@ -313,23 +403,32 @@ def detect_ma60_breaks(current_technical, previous_technical):
     Returns:
         list: MA60 이탈한 종목 리스트 [{ticker, current_price, ma60, previous_above}]
     """
-    if not current_technical or not previous_technical:
+    current_results = _extract_results(current_technical)
+    previous_results = _extract_results(previous_technical)
+
+    if not current_results or not previous_results:
         return []
-    
+
     ma60_breaks = []
-    
-    for ticker in current_technical:
-        current = current_technical[ticker]
-        
+
+    for ticker in current_results:
+        current = current_results[ticker]
+
+        if not isinstance(current, dict):
+            continue
+
         # 현재 데이터가 유효한지 확인
         if current['status'] != 'success':
             continue
-        
+
         # 전날 데이터가 있는지 확인
-        if ticker not in previous_technical:
+        if ticker not in previous_results:
             continue
-        
-        previous = previous_technical[ticker]
+
+        previous = previous_results[ticker]
+
+        if not isinstance(previous, dict):
+            continue
         if previous['status'] != 'success':
             continue
         
@@ -359,7 +458,10 @@ def detect_trailing_stops(current_technical, previous_technical):
     Returns:
         list: 트레일링 스탑 조건을 만족하는 종목 리스트
     """
-    if not current_technical or not previous_technical:
+    current_results = _extract_results(current_technical)
+    previous_results = _extract_results(previous_technical)
+
+    if not current_results or not previous_results:
         logger.warning("트레일링 스탑 감지: 현재 또는 전날 데이터 없음")
         return []
     
@@ -367,18 +469,24 @@ def detect_trailing_stops(current_technical, previous_technical):
     
     logger.info("=== 트레일링 스탑 감지 (버퍼 + 2일 연속 + MA20 기울기) ===")
     
-    for ticker in current_technical:
-        current = current_technical[ticker]
-        
+    for ticker in current_results:
+        current = current_results[ticker]
+
+        if not isinstance(current, dict):
+            continue
+
         # 현재 데이터가 유효한지 확인
         if current['status'] != 'success':
             continue
-        
+
         # 전날 데이터가 있는지 확인
-        if ticker not in previous_technical:
+        if ticker not in previous_results:
             continue
-        
-        previous = previous_technical[ticker]
+
+        previous = previous_results[ticker]
+
+        if not isinstance(previous, dict):
+            continue
         if previous['status'] != 'success':
             continue
         

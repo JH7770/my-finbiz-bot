@@ -20,7 +20,7 @@ def save_daily_data(df, date_str, filename_prefix=""):
     print(f"데이터를 {filename}에 저장했습니다.")
     return filename
 
-def load_previous_data(days_ago, filename_prefix=""):
+def load_previous_data(days_ago, filename_prefix="", return_date=False):
     """지정된 일수 전의 데이터를 로드
     
     Args:
@@ -33,10 +33,11 @@ def load_previous_data(days_ago, filename_prefix=""):
     print(f"로드 시도: {filename}")
     if os.path.exists(filename):
         print(f"파일 발견: {filename}")
-        return pd.read_csv(filename)
+        data = pd.read_csv(filename)
+        return (data, target_date) if return_date else data
     else:
         print(f"{days_ago}일 전 데이터를 찾을 수 없습니다: {filename}")
-        return None
+        return (None, target_date) if return_date else None
 
 def get_last_business_day_offset():
     """현재 날짜 기준으로 마지막 영업일까지의 오프셋을 반환
@@ -55,7 +56,7 @@ def get_last_business_day_offset():
     else:  # 화~금
         return 1  # 전날
 
-def load_last_business_day_data(filename_prefix=""):
+def load_last_business_day_data(filename_prefix="", return_date=False):
     """마지막 영업일의 데이터를 로드
     
     Args:
@@ -65,7 +66,7 @@ def load_last_business_day_data(filename_prefix=""):
         DataFrame 또는 None
     """
     offset = get_last_business_day_offset()
-    return load_previous_data(offset, filename_prefix)
+    return load_previous_data(offset, filename_prefix, return_date=return_date)
 
 def get_available_dates():
     """저장된 데이터의 날짜 목록을 반환"""
